@@ -24,8 +24,7 @@
                 <!-- <a href="">Account Details</a> -->
           </form>
         
-        <a href="">Apply Credit Card</a>
-      
+        <a href="CardPage.jsp">Apply Credit Card</a>
         <a href="#contact">Contact</a>
         <a href="MainPage.jsp">Logout</a>
 

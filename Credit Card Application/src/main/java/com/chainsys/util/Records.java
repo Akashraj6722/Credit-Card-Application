@@ -84,6 +84,8 @@ public static boolean check(Details details) throws ClassNotFoundException, SQLE
 			details.setAadhaar(rs.getString("aadhaar_number"));
 			details.setPan(rs.getString("pan_number"));
 			details.setPhone(rs.getString("phone_number"));
+			Long income=Long.parseLong(rs.getString("annual_income"));
+			details.setAnnualIncome(income);
 			
 			list.add(details);
 

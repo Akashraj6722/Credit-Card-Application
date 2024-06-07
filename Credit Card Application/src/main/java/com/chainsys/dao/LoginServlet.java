@@ -53,7 +53,7 @@ public class LoginServlet extends HttpServlet {
 		try {
 			if(Records.check(details)==true) {
 				
-				request.setAttribute("values", Records.read(details));
+				/* request.setAttribute("values", Records.read(details)); */
 				session.setAttribute("values", Records.read(details));
 				request.getRequestDispatcher("CustomerDetails.jsp").forward(request, response);
 

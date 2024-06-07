@@ -55,6 +55,20 @@ public class NumberGeneration {
 		return ifsc;
 	}
 	
+	public static int ccvNumber() {
+		
+		
+        Random random = new Random();
+
+        int cvv = 100 + random.nextInt(100);
+
+        System.out.println("Generated CVV: " + cvv);
+		return cvv;
+		
+		
+		
+	}
+	
 	public static String visaCreditCardNumber() {
 		
         Random random=new Random();
@@ -96,6 +110,31 @@ public class NumberGeneration {
 			
 		}
 		String cardNumber="5"+sb.toString();
+		
+//		String [] cardArray=cardNumber.split("(?<=\\G.{4})");
+//		
+//		for(int i =0;i<4;i++) {
+//			
+//			System.out.println(cardArray[i]);
+//			
+//		}
+		return cardNumber;
+		
+	}
+public static String rupayCardNumber() {
+		
+        Random random=new Random();
+        
+        
+		
+		StringBuilder sb= new StringBuilder();
+		
+		for(int i=0;i<=15 ;i++) {
+			
+			sb.append(random.nextInt(10));
+			
+		}
+		String cardNumber="6"+sb.toString();
 		
 //		String [] cardArray=cardNumber.split("(?<=\\G.{4})");
 //		

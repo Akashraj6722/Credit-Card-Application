@@ -22,7 +22,7 @@
                      <button class="btn btn secondary" value="submit">Profile</button>
                 <!-- <a href="">Account Details</a> -->
           </form>
-        <a href="#clients">Apply Credit Card</a>
+        <a href="CardPage.jsp">Apply Credit Card</a>
         <a href="#contact">Contact</a>
         <a href="#contact">Logout</a>
 
