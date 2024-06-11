@@ -1,6 +1,6 @@
 package com.chainsys.model;
 
-public class CardDetails {
+public class EmploymentDetails {
 	
 	String occupation;
 	String companyname;

@@ -8,13 +8,19 @@ public class Details {
 	String dob;
 	String aadhaar;
 	String pan;
+	String mail;
 	String phone;
-	long annualIncome;
 	String password;
 	
 	
 	
 	
+	public String getMail() {
+		return mail;
+	}
+	public void setMail(String mail) {
+		this.mail = mail;
+	}
 	public int getCustomerID() {
 		return customerID;
 	}
@@ -57,12 +63,8 @@ public class Details {
 	public void setPhone(String phone) {
 		this.phone = phone;
 	}
-	public long getAnnualIncome() {
-		return annualIncome;
-	}
-	public void setAnnualIncome(long annualIncome) {
-		this.annualIncome = annualIncome;
-	}
+	
+	
 	public String getPassword() {
 		return password;
 	}

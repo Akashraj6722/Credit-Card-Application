@@ -1,15 +1,41 @@
 package com.chainsys.model;
 
-public class PreviewCard {
+public class CreditCardDetails {
 	
-	
-	String cardNumber;
+	int id;
+	String accountNumber;
 	String holderName;
+	String cardNumber;
+	String cardType;
 	int cvvNumber;
+	int pin;
 	String cardAppliedDate;
 	String validity;
+	String cardApproval;
+	
+	
+	
+	public String getCardApproval() {
+		return cardApproval;
+	}
+	public void setCardApproval(String cardApproval) {
+		this.cardApproval = cardApproval;
+	}
+	public String getAccountNumber() {
+		return accountNumber;
+	}
+	public void setAccountNumber(String accountNumber) {
+		this.accountNumber = accountNumber;
+	}
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
 	public String getCardNumber() {
 		return cardNumber;
+		
 	}
 	public void setCardNumber(String cardNumber) {
 		this.cardNumber = cardNumber;
@@ -38,6 +64,18 @@ public class PreviewCard {
 	}
 	public void setValidity(String validity) {
 		this.validity = validity;
+	}
+	public String getCardType() {
+		return cardType;
+	}
+	public void setCardType(String cardType) {
+		this.cardType = cardType;
+	}
+	public int getPin() {
+		return pin;
+	}
+	public void setPin(int pin) {
+		this.pin = pin;
 	}
 	
 	

@@ -13,7 +13,7 @@ public class Records {
 	public static void insert(Details details) throws ClassNotFoundException, SQLException {
 
 		Connection connect = ConnectUtil.getConnection();
-		String query = "INSERT INTO customer_details(first_name,last_name,dob,aadhaar_number,pan_number,phone_number,annual_income,password) VALUES(?,?,?,?,?,?,?,?)";
+		String query = "INSERT INTO user_details(first_name,last_name,dob,aadhaar_number,pan_number,email_id,phone_number,password) VALUES(?,?,?,?,?,?,?,?)";
 
 		PreparedStatement pr = connect.prepareStatement(query);
 
@@ -22,11 +22,13 @@ public class Records {
 		pr.setString(3, details.getDob());
 		pr.setString(4, details.getAadhaar());
 		pr.setString(5, details.getPan());
-		pr.setString(6, details.getPhone());
-		pr.setLong(7, details.getAnnualIncome());
+		pr.setString(6, details.getMail());
+		pr.setString(7, details.getPhone());
 		pr.setString(8, details.getPassword());
 
 		pr.executeUpdate();
+		
+		System.out.println("signing Up");
 
 	}
 	
@@ -35,11 +37,11 @@ public static boolean check(Details details) throws ClassNotFoundException, SQLE
 		
 
 		Connection connect = ConnectUtil.getConnection();
-		String query = "SELECT * FROM customer_details WHERE phone_number=? AND password=? ";
+		String query = "SELECT * FROM user_details WHERE email_id=? AND password=? ";
 
 		PreparedStatement pr = connect.prepareStatement(query);
 
-		pr.setString(1, details.getPhone());
+		pr.setString(1, details.getMail());
 		pr.setString(2, details.getPassword());
 
 		ResultSet rs = pr.executeQuery();
@@ -66,26 +68,27 @@ public static boolean check(Details details) throws ClassNotFoundException, SQLE
         ArrayList<Details> list = new ArrayList<>();
 
 		Connection connect = ConnectUtil.getConnection();
-		String query = "SELECT * FROM customer_details WHERE phone_number=? AND password=? ";
+		String query = "SELECT * FROM user_details WHERE email_id=? AND password=? ";
 
 		PreparedStatement pr = connect.prepareStatement(query);
 
-		pr.setString(1, details.getPhone());
+		pr.setString(1, details.getMail());
 		pr.setString(2, details.getPassword());
 
 		ResultSet rs = pr.executeQuery();
 
 		if (rs.next()) {
 			
-			details.setCustomerID(rs.getInt("customer_id"));
+			details.setCustomerID(rs.getInt("id"));
 			details.setfName(rs.getString("first_name"));
 			details.setlName(rs.getString("last_name"));
 			details.setDob(rs.getString("dob"));
 			details.setAadhaar(rs.getString("aadhaar_number"));
 			details.setPan(rs.getString("pan_number"));
 			details.setPhone(rs.getString("phone_number"));
-			Long income=Long.parseLong(rs.getString("annual_income"));
-			details.setAnnualIncome(income);
+			details.setMail(rs.getString("email_id"));
+			
+			System.out.println("reading user details");
 			
 			list.add(details);
 
@@ -100,7 +103,7 @@ public static void readSpecific(Details details) throws ClassNotFoundException, 
 		
        
 		Connection connect = ConnectUtil.getConnection();
-		String query = "SELECT * FROM customer_details WHERE phone_number=? AND password=? ";
+		String query = "SELECT * FROM user_details WHERE email_id=? AND password=? ";
 
 		PreparedStatement pr = connect.prepareStatement(query);
 
@@ -122,10 +125,32 @@ public static void readSpecific(Details details) throws ClassNotFoundException, 
 		
 
 			
-		}
-//		
-		
+		}		
+			}
 
+public static String readMail(int id) throws ClassNotFoundException, SQLException {
+	
+    String mail = "";
+	Connection connect = ConnectUtil.getConnection();
+	String query = "SELECT email_id FROM user_details WHERE id=? ";
+
+	PreparedStatement pr = connect.prepareStatement(query);
+
+	pr.setInt(1, id);
+
+
+	ResultSet rs = pr.executeQuery();
+
+	if (rs.next()) {
+//		Details details=new Details();
+//		
+//		details.setMail(rs.getString("email_id"));
+		mail=rs.getString("email_id");
+		System.out.println(mail);
+		
 	}
+	return mail;
+
+		}
 
 }

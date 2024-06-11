@@ -16,7 +16,7 @@
             </div>
             <div class="form-group">
                 <label for="company-name">Company Name:</label>
-                <input type="text" id="company-name" name="companyame" required>
+                <input type="text" id="company-name" name="companyName" required>
             </div>
             <div class="form-group">
                 <label for="designation">Designation:</label>

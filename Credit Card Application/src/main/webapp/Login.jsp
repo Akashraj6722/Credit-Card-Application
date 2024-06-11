@@ -31,14 +31,14 @@
     <div class="image">
         <div class="container">
             <div class="box">
-                <form action="LoginServlet" method="get" onsubmit="return validatePassword()">
+                <form action="LoginServlet" method="post" onsubmit="return validatePassword()">
                     <div class="row">
 
 
                         <div class="column1">
                             <ul>
 
-                                <li> <label for="ph" class="phone">Phone Number:</label></li><br>
+                                <li> <label for="mail" class="mail">E-Mail:</label></li><br>
                                 <li> <label for="pass" class="pass">Password:</label></li><br>
 
                             </ul>
@@ -46,7 +46,7 @@
 
                         <div class="column2">
                             <ul>
-                                <li><input type="tel" id="ph" name="ph" placeholder="+91" pattern="[0-9]{10}" required>
+                                <li><input type="tel" id="mail" name="mail" placeholder="Enter Your mail"  required>
                                 </li>
                                 <br>
 

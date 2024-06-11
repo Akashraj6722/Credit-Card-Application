@@ -1,6 +1,7 @@
 package com.chainsys.dao;
 
 import java.io.IOException;
+import java.sql.SQLException;
 import java.time.YearMonth;
 import java.util.ArrayList;
 
@@ -11,10 +12,17 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import com.chainsys.model.CardDetails;
+import com.chainsys.model.EmploymentDetails;
 import com.chainsys.model.Details;
-import com.chainsys.model.PreviewCard;
+import com.chainsys.model.BankDetails;
+import com.chainsys.model.CreditCardDetails;
+import com.chainsys.util.AccountRecords;
 import com.chainsys.util.CardEligibility;
+import com.chainsys.util.CardRecords;
+import com.chainsys.util.EmploymentRecords;
+import com.chainsys.util.Records;
+import com.chainsys.model.Details;
+
 
 /**
  * Servlet implementation class CardServlet
@@ -22,28 +30,27 @@ import com.chainsys.util.CardEligibility;
 @WebServlet("/CardServlet")
 public class CardServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	CardDetails card = new CardDetails();
-	PreviewCard preview =new PreviewCard();
+	Details details = new Details();
+	EmploymentDetails employment = new EmploymentDetails();
+	CreditCardDetails card =new CreditCardDetails();
+	BankDetails bankDetails=new BankDetails();
        
     /**
      * @see HttpServlet#HttpServlet()
      */
     public CardServlet() {
         super();
-        // TODO Auto-generated constructor stub
     }
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		
+	
 	}
 
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
+	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
      
 		HttpSession sess= request.getSession();
@@ -54,40 +61,56 @@ public class CardServlet extends HttpServlet {
 	    	String fName = display.getfName();
 	    	String lName =  display.getlName();
 	    	 
-	    	 preview.setHolderName(fName+" "+lName);
+	    	card.setHolderName(fName+" "+lName);
 	    	 
-	    	 card.setOccupation(request.getParameter("occupation"));
+	    	 employment.setOccupation(request.getParameter("occupation"));
 	    
-		card.setCompanyname(request.getParameter("companyName"));
-		card.setDesignation(request.getParameter("deignation"));
+	    	 employment.setCompanyname(request.getParameter("companyName"));
+	    	 employment.setDesignation(request.getParameter("designation"));
         
 		Long income=Long.parseLong(request.getParameter("annualIncome"));
-		card.setIncome(income);
+		employment.setIncome(income);
+		
 		
 	
+		try {
+			Records.readSpecific(display);//to get customer id
+			AccountRecords.read(display, bankDetails);  //to get account number 
+			EmploymentRecords.insert(employment, details);
+			
+			System.out.println("employYY");
+		} catch (ClassNotFoundException | SQLException e) {
+			e.printStackTrace();
+		}
 		
-		
-		
+	
 		
 		if(income>200000 && income<400000) {
 			System.out.println("You are eligible for Silver Card");
 			
-			preview.setCardNumber(NumberGeneration.rupayCardNumber());
-			preview.setCvvNumber(NumberGeneration.ccvNumber());
+			card.setCardNumber(NumberGeneration.rupayCardNumber());
+			card.setCvvNumber(NumberGeneration.ccvNumber());
 			
 			
 			YearMonth ym=YearMonth.now();
 			String date=ym.toString();
 			System.out.println(date);
-			preview.setCardAppliedDate(date);
+			card.setCardAppliedDate(date);
 
 			
-			String valid=ym.plusYears(4).toString();
+			String valid=ym.plusYears(3).toString();
 			System.out.println(valid);
-			preview.setValidity(valid);
+			card.setValidity(valid);
+			card.setCardType("silver");
+			
+			try {
+				CardRecords.insert(card, display, bankDetails);
+			} catch (ClassNotFoundException | SQLException e) {
+				e.printStackTrace();
+			}
 			
 			
-			request.setAttribute("values",PreviewDetails.display(preview));
+			request.setAttribute("values",PreviewDetails.display(card));
 			request.getRequestDispatcher("PreviewSilver.jsp").forward(request, response);
 			
 

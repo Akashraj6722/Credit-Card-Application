@@ -2,25 +2,25 @@ package com.chainsys.dao;
 
 import java.util.ArrayList;
 
-import com.chainsys.model.CardDetails;
-import com.chainsys.model.PreviewCard;
+import com.chainsys.model.EmploymentDetails;
+import com.chainsys.model.CreditCardDetails;
 
 public class PreviewDetails {
 	
 	
 
-	public static ArrayList<PreviewCard> display(PreviewCard preview) {
+	public static ArrayList<CreditCardDetails> display(CreditCardDetails card) {
 		
-		ArrayList<PreviewCard> list=new ArrayList<PreviewCard>();
-		preview.getHolderName();
-		preview.getCardNumber();
-		preview.getCvvNumber();
-		preview.getCardAppliedDate();
-		preview.getValidity();
+		ArrayList<CreditCardDetails> list=new ArrayList<CreditCardDetails>();
+		card.getHolderName();
+		card.getCardNumber();
+		card.getCvvNumber();
+		card.getCardAppliedDate();
+		card.getValidity();
 		
 		
-		System.out.println("working...."+preview.getCardNumber());
-		list.add(preview);
+		System.out.println("working...."+card.getCardNumber());
+		list.add(card);
 		return list;
 		
 		

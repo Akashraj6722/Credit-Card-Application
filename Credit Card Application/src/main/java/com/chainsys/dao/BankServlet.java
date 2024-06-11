@@ -64,11 +64,10 @@ public class BankServlet extends HttpServlet {
 		details.setDob(request.getParameter("DOB"));
 		details.setAadhaar(request.getParameter("aadhaar"));
 		details.setPan(request.getParameter("pan"));
+		details.setMail(request.getParameter("mail"));
 		details.setPhone(request.getParameter("ph"));
-		bankDetails.setAccountType(request.getParameter("accountType"));
 		
-		Long income=Long.parseLong(request.getParameter("income"));
-		details.setAnnualIncome(income);
+		
 		details.setPassword(request.getParameter("pass"));
 		
 		bankDetails.setAccountNumber(NumberGeneration.accountNumber());

@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
      <%@ page import="java.util.ArrayList" %>
-    <%@ page import="com.chainsys.model.PreviewCard" %>
+    <%@ page import="com.chainsys.model.CreditCardDetails" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,10 +10,12 @@
 </head>
 <body>
 
-<% PreviewCard preview = new PreviewCard();
+<%
 
-ArrayList<PreviewCard> list=(ArrayList<PreviewCard>)request.getAttribute("values");
-for(PreviewCard list1:list){
+ CreditCardDetails preview = new CreditCardDetails();
+
+ArrayList<CreditCardDetails> list=(ArrayList<CreditCardDetails>)request.getAttribute("values");
+for(CreditCardDetails list1:list){
 %>
 
 

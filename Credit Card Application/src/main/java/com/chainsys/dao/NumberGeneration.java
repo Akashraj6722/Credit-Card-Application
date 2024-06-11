@@ -77,7 +77,7 @@ public class NumberGeneration {
 		
 		StringBuilder sb= new StringBuilder();
 		
-		for(int i=0;i<=15 ;i++) {
+		for(int i=0;i<15 ;i++) {
 			
 			sb.append(random.nextInt(10));
 			
@@ -104,7 +104,7 @@ public class NumberGeneration {
 		
 		StringBuilder sb= new StringBuilder();
 		
-		for(int i=0;i<=15 ;i++) {
+		for(int i=0;i<15 ;i++) {
 			
 			sb.append(random.nextInt(10));
 			
@@ -129,7 +129,7 @@ public static String rupayCardNumber() {
 		
 		StringBuilder sb= new StringBuilder();
 		
-		for(int i=0;i<=15 ;i++) {
+		for(int i=0;i<15 ;i++) {
 			
 			sb.append(random.nextInt(10));
 			

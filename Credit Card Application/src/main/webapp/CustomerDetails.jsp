@@ -19,12 +19,13 @@
 
         <a href="#home">Home</a>
         
-        <form action="LoginServlet" method="post">
+        <form action="LoginServlet" method="get">
                      <button class="btn btn secondary" value="submit">Account Details</button>
                 <!-- <a href="">Account Details</a> -->
           </form>
         
         <a href="CardPage.jsp">Apply Credit Card</a>
+        <a href="SetPin.jsp">Set PIN For Credit Card</a>
         <a href="#contact">Contact</a>
         <a href="MainPage.jsp">Logout</a>
 

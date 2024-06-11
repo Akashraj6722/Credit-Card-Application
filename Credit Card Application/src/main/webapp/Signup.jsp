@@ -44,10 +44,10 @@
                         <li> <label class="DOB " for="DOB">Date.Of.Birth:</label></li><br>
                         <li> <label for="aadhaar" class="aadhaar">Aadhaar Number:</label></li><br>
                         <li> <label for="pan" class="pan">PAN Number:</label> </li><br>
+                        <li> <label for="mail" class="mail">Email:</label></li><br>
                         <li> <label for="ph" class="phone">Phone Number:</label></li><br>
-                        <li><label for="accountType" class="accountType">Account Type</label></li><br>
-                        <li> <label for="income" class="income">Annual Income:</label></li><br>
-                        <li> <label for="pass" class="pass">Password:</label></li><br>
+<!--                         <li><label for="accountType" class="accountType">Account Type</label></li><br>
+ -->                    <li> <label for="pass" class="pass">Password:</label></li><br>
                         <li> <label for="repass" class="repass">Confirm Password:</label></li><br>
 
                     </ul>
@@ -60,14 +60,14 @@
                         <li> <input type="date" id="DOB" name="DOB"  required></li><br>
                         <li><input type="text" id="aadhaar" name="aadhaar"  placeholder="Enter  Aadhaar Number" pattern="[0-9]{12}" required></li><br>
                         <li><input type="text" id="pan" name="pan"  placeholder="Enter  PAN Number" pattern="[A-Z]{5}[0-9]{4}[A-Z]{1}" required></li><br>
+                        <li><input type="text" id="mail" name="mail"  placeholder="Enter Your Mail-id" pattern="[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+[com]$" required ></li><br>
                         <li><input type="tel" id="ph" name="ph"  placeholder="+91" pattern="[0-9]{10}" required ></li><br>
-                        <li><select  name="accountType" id="accountType">
+                       <!--  <li><select  name="accountType" id="accountType">
                               <option value="Select"> Select Any One </option>
                               <option value="Savings Account">Savings Account</option>
                               <option value="Current Account">Current Account</option>
-                           </select></li><br>
+                           </select></li><br> -->
                            
-                        <li><input type="tel" id="income" name="income"  placeholder="Enter Your Annual Income"  required ></li><br>
                         <li><input type="text" id="pass" name="pass" placeholder="Atleast 8 Characters" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*()_+.])(?=.*\\d).{8,}$"required ></li><br>
                         <li><input type="text" id="repass" name="repass" placeholder="Re-Enter Password" required ></li><br>
 

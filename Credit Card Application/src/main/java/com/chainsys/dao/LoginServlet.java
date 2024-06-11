@@ -34,24 +34,52 @@ public class LoginServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
+		System.out.println("get");
+//		 System.out.println(details.getCustomerID());
+//		 
+//	
+		 System.out.println("after Get: "+details.getCustomerID());
+
+
+		try {
+			request.setAttribute("info", AccountRecords.read(details, bankDetails));
+		} catch (ClassNotFoundException | SQLException e) {
+			e.printStackTrace();
+		}
+		System.out.println("LoginServlet:get");
+		request.getRequestDispatcher("AccountDetails.jsp").forward(request, response);
+	}
+
 	
 		
-		String phone=request.getParameter("ph");
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
+  
+		
+
+		String mail=request.getParameter("mail");
 		String password=request.getParameter("pass");
 		
-		details.setPhone(phone);
+		details.setMail(mail);
 		details.setPassword(password);
 		
 		HttpSession session = request.getSession();
 		
 		
-		session.setAttribute("phoneNumber", details.getPhone());
+		session.setAttribute("email", details.getMail());
 		
 		System.out.println(details.getPhone());
 		
 		try {
 			if(Records.check(details)==true) {
+				
+				
+				if(details.getMail().endsWith("@mitb.com")) {
+					
+					response.sendRedirect("AdminPage.jsp");
+					
+					
+				}else {
 				
 				/* request.setAttribute("values", Records.read(details)); */
 				session.setAttribute("values", Records.read(details));
@@ -60,7 +88,7 @@ public class LoginServlet extends HttpServlet {
 //				response.sendRedirect("CustomerDetails.jsp");
 //				HttpSession session=request.getSession();
 //				 session.setAttribute("phone", phone);
-				
+				}
 			}
 			
 		} catch (ClassNotFoundException | SQLException e) {
@@ -70,28 +98,6 @@ public class LoginServlet extends HttpServlet {
 
 	
 	}
-
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
-  
-		
-		System.out.println("post");
-//		 System.out.println(details.getCustomerID());
-//		 
-//	
-		 System.out.println("after Post: "+details.getCustomerID());
-
-
-		try {
-			request.setAttribute("info", AccountRecords.read(details, bankDetails));
-		} catch (ClassNotFoundException | SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		request.getRequestDispatcher("AccountDetails.jsp").forward(request, response);
 
 		
 //		HttpSession session=request.getSession(false);
@@ -106,4 +112,4 @@ public class LoginServlet extends HttpServlet {
 
 	}
 
-}
+
