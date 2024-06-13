@@ -7,7 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-    <div class="box">
+   
         <div class="container">
 
             <div class="card-gold">

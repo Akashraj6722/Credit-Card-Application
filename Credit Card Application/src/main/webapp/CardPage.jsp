@@ -146,7 +146,7 @@
                     </ul>
                 </div>
                 <div class="apply">
-                    <a href=""CardForms.jsp"">Apply Now</a>
+                    <a href="CardForms.jsp">Apply Now</a>
                 </div>
 
             </div>
@@ -221,7 +221,7 @@
                     </ul>
                 </div>
                 <div class="apply">
-                    <a href=""CardForms.jsp"">Apply Now</a>
+                    <a href="CardForms.jsp">Apply Now</a>
                 </div>
 
             </div>
@@ -275,7 +275,7 @@
                 <div class="join"><br>
                     <h3> Card ELITE Advantage</h3><br>
                     <ul>
-                        <li>Joining fee: ₹4999</li>
+                        <li>Joining fee: <i class="fa-duotone fa-indian-rupee-sign"></i>4999</li>
                         <li>Annual/Renewal Fee: ₹4999</li>
                     </ul><br>
                 </div>
@@ -289,7 +289,7 @@
                     </ul>
                 </div>
                 <div class="apply">
-                    <a href="CardForms.jsp"">Apply Now</a>
+                    <a href="CardForms.jsp">Apply Now</a>
                 </div>
             </div>
         </div>

@@ -20,7 +20,6 @@ import com.chainsys.model.Details;
 import com.chainsys.model.BankDetails;
 import com.chainsys.model.CreditCardDetails;
 import com.chainsys.util.AccountRecords;
-import com.chainsys.util.CardEligibility;
 import com.chainsys.util.CardRecords;
 import com.chainsys.util.EmploymentRecords;
 import com.chainsys.util.Records;
@@ -99,7 +98,7 @@ public class CardServlet extends HttpServlet {
 				e.printStackTrace();
 			}
 
-			if (income > 200000 && income < 400000) {
+			if (income >= 200000 && income < 400000) {
 				System.out.println("You are eligible for Silver Card");
 
 				card.setCardNumber(NumberGeneration.rupayCreditCardNumber());
@@ -126,7 +125,7 @@ public class CardServlet extends HttpServlet {
 
 //			response.sendRedirect("CardSilver.jsp");
 
-			} else if (income > 400000 && income < 600000) {
+			} else if (income >= 400000 && income < 600000) {
 				System.out.println("You are eligible for Gold Card");
 				card.setCardNumber(NumberGeneration.pulseCreditCardNumber());
 				card.setCvvNumber(NumberGeneration.ccvNumber());
@@ -150,7 +149,7 @@ public class CardServlet extends HttpServlet {
 				request.setAttribute("values", PreviewDetails.display(card));
 				request.getRequestDispatcher("PreviewGold.jsp").forward(request, response);
 
-			} else if (income > 600000 && income < 800000) {
+			} else if (income >= 600000 && income < 800000) {
 
 				System.out.println("You are eligible for Platinum Card");
 				card.setCardNumber(NumberGeneration.visaCreditCardNumber());

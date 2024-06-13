@@ -81,6 +81,7 @@ public class AdminServlet extends HttpServlet {
 			String message="Sorry!Your Credit Card:"+cardNo+"has been Rejected";
 			
 			ApprovalRecords.reject(card);
+			request.setAttribute("incomeProof", EmploymentRecords.read(details, employment));
 			request.setAttribute("values", CardRecords.read());
 			request.getRequestDispatcher("CreditCardApproval.jsp").forward(request, response);
 			Mail.setProperties();
@@ -99,7 +100,17 @@ public class AdminServlet extends HttpServlet {
 			
 
 		}
-
+		
+		
+//		try {
+////			ses.setAttribute("image", EmploymentRecords.read(details,employment));
+//			request.setAttribute("values", CardRecords.read());
+////			byte[] incomeProof=EmploymentRecords.read(details, employment);
+//			request.setAttribute("incomeProof", EmploymentRecords.read(details, employment));
+//			request.getRequestDispatcher("CreditCardApproval.jsp").forward(request, response);
+//		} catch (ClassNotFoundException | SQLException e) {
+//			e.printStackTrace();
+//		}
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)

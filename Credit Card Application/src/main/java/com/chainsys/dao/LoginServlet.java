@@ -74,7 +74,7 @@ public class LoginServlet extends HttpServlet {
 			if(Records.check(details)==true) {
 				
 				
-				if(details.getMail().endsWith("@mitb.com")) {
+				if(details.getMail().endsWith("@admin.com")) {
 					
 					response.sendRedirect("AdminPage.jsp");
 					
