@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 
-
+<%@ page import="java.util.Base64"%>
 <%@ page import="java.util.ArrayList"%>
 <%@ page import="com.chainsys.model.CreditCardDetails"%>
 <!DOCTYPE html>
@@ -11,6 +11,7 @@
 <title>Insert title here</title>
 </head>
 <body>
+
 	<table>
 		<tr>
 			<th>Customer's ID</th>
@@ -19,58 +20,69 @@
 			<th>Credit Card Type</th>
 			<th>Credit Card Status</th>
 			<th>Credit Card Approval</th>
-			<th>Income Proof </th>
-		
-		</tr>
+			<th>Income Proof</th>
 
+		</tr>
 		<%
-		HttpSession se=request.getSession();
-		byte[] image=(byte[])se.getAttribute("image");
-		ArrayList<CreditCardDetails> list = (ArrayList<CreditCardDetails>) request.getAttribute("values");
-		for (CreditCardDetails list1 : list){
+		 ArrayList<CreditCardDetails> list = (ArrayList<CreditCardDetails>) request.getAttribute("values");
+        ArrayList<byte[]> imageList = (ArrayList<byte[]>) request.getAttribute("incomeProof");
+
+        if (list != null && imageList != null) {
+            for (int i = 0; i < list.size(); i++) {
+                CreditCardDetails cardDetails = list.get(i);
+                String base64Image = "";
+
+                if (i < imageList.size()) {
+                    byte[] imageBytes = imageList.get(i);
+                    base64Image = Base64.getEncoder().encodeToString(imageBytes);
+                }
 		%>
+		
 
 
 		<tr>
-			<td><%=list1.getId()%></td>
-			<td><%=list1.getAccountNumber()%></td>
-			<td><%=list1.getCardNumber()%></td>
-			<td><%=list1.getCardType()%></td>
-			<td><%=list1.getCardStatus() %>
-			<td><%=list1.getCardApproval()%></td>
-			<td><%=image %></td>
-			
+			<td><%=cardDetails.getId()%></td>
+			<td><%=cardDetails.getAccountNumber()%></td>
+			<td><%=cardDetails.getCardNumber()%></td>
+			<td><%=cardDetails.getCardType()%></td>
+			<td><%=cardDetails.getCardStatus()%>
+			<td><%=cardDetails.getCardApproval()%></td>
+			<td><img src="data:image/jpeg;base64,<%=base64Image%>"
+				alt="Income Proof"></td>
+
 			<td>
-		
-			<div class="formAction">
-			<form action="AdminServlet" method="get">
-		     <input type="hidden" name="action" value= "update">
-			 <input type="hidden" name="id" value= "<%=list1.getId()%>">
-			 <input type="hidden" name="card" value= "<%=list1.getCardNumber()%>">
-			 <button type="submit" value="submit">Approve</button>
-			 </form>
-			 
-			 <form action="AdminServlet" method="get">
-			 <input type="hidden" name="action" value= "reject">
-			 <input type="hidden" name="id" value= "<%=list1.getId()%>">
-			 <input type="hidden" name="card" value= "<%=list1.getCardNumber()%>">
-			 <button type="submit" value="submit">Reject</button>
-			</form>
-			</div>
+
+				<div class="formAction">
+					<form action="AdminServlet" method="get">
+						<input type="hidden" name="action" value="update"> <input
+							type="hidden" name="id" value="<%=cardDetails.getId()%>"> <input
+							type="hidden" name="card" value="<%=cardDetails.getCardNumber()%>">
+						<button type="submit" value="submit">Approve</button>
+					</form>
+
+					<form action="AdminServlet" method="get">
+						<input type="hidden" name="action" value="reject"> <input
+							type="hidden" name="id" value="<%=cardDetails.getId()%>"> <input
+							type="hidden" name="card" value="<%=cardDetails.getCardNumber()%>">
+						<button type="submit" value="submit">Reject</button>
+					</form>
+				</div>
 			</td>
-	</tr>
-		
-		<%} %>
+		</tr>
+
+		<%
+		}
+		}
+		%>
+	
 </body>
 
 <style>
-.formAction{
-
-display:flex;
-gap:45px;
-
-
+.formAction {
+	display: flex;
+	gap: 45px;
 }
+
 * {
 	margin: 0%;
 	padding: 0%;

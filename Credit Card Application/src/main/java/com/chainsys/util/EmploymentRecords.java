@@ -36,31 +36,34 @@ public class EmploymentRecords {
 		
 	}
 	
-public static byte[] read(Details details,EmploymentDetails employment ) throws ClassNotFoundException, SQLException{
+public static ArrayList<byte[]> read(Details details,EmploymentDetails employment ) throws ClassNotFoundException, SQLException{
 		
+	
+	ArrayList<byte[]> list=new ArrayList<byte[]>();
 	byte[] incomeProof=null;
 		Connection connect = ConnectUtil.getConnection();
 		
-		String query="SELECT * FROM employment_details WHERE id_number=?";
+		String query="SELECT income_proof FROM employment_details";
 		
 		PreparedStatement pr=connect.prepareStatement(query);
 		
-		pr.setInt(1,details.getCustomerID());
+//		pr.setInt(1,details.getCustomerID());
 		
 		System.out.println("ID(Approve admin): "+ details.getCustomerID());
 		
 		ResultSet rs=pr.executeQuery();
 		
 		
-		if(rs.next()) {
+		while(rs.next()) {
 			
 			Blob blob=rs.getBlob("income_proof");
 			
 			incomeProof=blob.getBytes(1, (int)blob.length());
+			list.add(incomeProof);
 			
             
 		}
-		return incomeProof;
+		return list;
 		
 
 		

@@ -121,7 +121,7 @@ public class NumberGeneration {
 		return cardNumber;
 		
 	}
-public static String rupayCardNumber() {
+public static String rupayCreditCardNumber() {
 		
         Random random=new Random();
         
@@ -146,5 +146,31 @@ public static String rupayCardNumber() {
 		return cardNumber;
 		
 	}
+
+public static String pulseCreditCardNumber() {
+	
+    Random random=new Random();
+    
+    
+	
+	StringBuilder sb= new StringBuilder();
+	
+	for(int i=0;i<15 ;i++) {
+		
+		sb.append(random.nextInt(10));
+		
+	}
+	String cardNumber="6"+sb.toString();
+	
+//	String [] cardArray=cardNumber.split("(?<=\\G.{4})");
+//	
+//	for(int i =0;i<4;i++) {
+//		
+//		System.out.println(cardArray[i]);
+//		
+//	}
+	return cardNumber;
+	
+}
 	
 }

@@ -59,10 +59,8 @@ public class AdminServlet extends HttpServlet {
 			} catch (ClassNotFoundException | SQLException e) {
 				e.printStackTrace();
 			} catch (AddressException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			} catch (MessagingException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 
@@ -91,10 +89,8 @@ public class AdminServlet extends HttpServlet {
 		} catch (ClassNotFoundException | SQLException e) {
 			e.printStackTrace();
 		} catch (AddressException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} catch (MessagingException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 
@@ -110,10 +106,14 @@ public class AdminServlet extends HttpServlet {
 			throws ServletException, IOException {
 		
 		HttpSession ses=request.getSession();
+		
+		
 
 		try {
-			ses.setAttribute("image", EmploymentRecords.read(details,employment));
+//			ses.setAttribute("image", EmploymentRecords.read(details,employment));
 			request.setAttribute("values", CardRecords.read());
+//			byte[] incomeProof=EmploymentRecords.read(details, employment);
+			request.setAttribute("incomeProof", EmploymentRecords.read(details, employment));
 			request.getRequestDispatcher("CreditCardApproval.jsp").forward(request, response);
 		} catch (ClassNotFoundException | SQLException e) {
 			e.printStackTrace();

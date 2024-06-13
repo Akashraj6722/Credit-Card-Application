@@ -102,7 +102,7 @@ public class CardServlet extends HttpServlet {
 			if (income > 200000 && income < 400000) {
 				System.out.println("You are eligible for Silver Card");
 
-				card.setCardNumber(NumberGeneration.rupayCardNumber());
+				card.setCardNumber(NumberGeneration.rupayCreditCardNumber());
 				card.setCvvNumber(NumberGeneration.ccvNumber());
 
 				YearMonth ym = YearMonth.now();
@@ -128,16 +128,78 @@ public class CardServlet extends HttpServlet {
 
 			} else if (income > 400000 && income < 600000) {
 				System.out.println("You are eligible for Gold Card");
-				response.sendRedirect("CardGold.jsp");
+				card.setCardNumber(NumberGeneration.pulseCreditCardNumber());
+				card.setCvvNumber(NumberGeneration.ccvNumber());
+
+				YearMonth ym = YearMonth.now();
+				String date = ym.toString();
+				System.out.println(date);
+				card.setCardAppliedDate(date);
+
+				String valid = ym.plusYears(3).toString();
+				System.out.println(valid);
+				card.setValidity(valid);
+				card.setCardType("gold");
+
+				try {
+					CardRecords.insert(card, display, bankDetails);
+				} catch (ClassNotFoundException | SQLException e) {
+					e.printStackTrace();
+				}
+
+				request.setAttribute("values", PreviewDetails.display(card));
+				request.getRequestDispatcher("PreviewGold.jsp").forward(request, response);
 
 			} else if (income > 600000 && income < 800000) {
 
 				System.out.println("You are eligible for Platinum Card");
-				response.sendRedirect("CardPlatinum.jsp");
+				card.setCardNumber(NumberGeneration.visaCreditCardNumber());
+				card.setCvvNumber(NumberGeneration.ccvNumber());
+
+				YearMonth ym = YearMonth.now();
+				String date = ym.toString();
+				System.out.println(date);
+				card.setCardAppliedDate(date);
+
+				String valid = ym.plusYears(4).toString();
+				System.out.println(valid);
+				card.setValidity(valid);
+				card.setCardType("silver");
+
+				try {
+					CardRecords.insert(card, display, bankDetails);
+				} catch (ClassNotFoundException | SQLException e) {
+					e.printStackTrace();
+				}
+
+				request.setAttribute("values", PreviewDetails.display(card));
+				request.getRequestDispatcher("PreviewPlatinum.jsp").forward(request, response);
+
 
 			} else if (income > 800000) {
 				System.out.println("You are eligible for Elite Card");
-				response.sendRedirect("CardElite.jsp");
+				card.setCardNumber(NumberGeneration.masterCreditCardNumber());
+				card.setCvvNumber(NumberGeneration.ccvNumber());
+
+				YearMonth ym = YearMonth.now();
+				String date = ym.toString();
+				System.out.println(date);
+				card.setCardAppliedDate(date);
+
+				String valid = ym.plusYears(5).toString();
+				System.out.println(valid);
+				card.setValidity(valid);
+				card.setCardType("silver");
+
+				try {
+					CardRecords.insert(card, display, bankDetails);
+				} catch (ClassNotFoundException | SQLException e) {
+					e.printStackTrace();
+				}
+
+				request.setAttribute("values", PreviewDetails.display(card));
+				request.getRequestDispatcher("PreviewElite.jsp").forward(request, response);
+
 
 			} else {
 
