@@ -78,6 +78,7 @@ public static void insert(CreditCardDetails card, Details details ,BankDetails b
 			card.setCardNumber(rs.getString("credit_card_number"));
 			card.setCardType(rs.getString("credit_card_type"));
 			card.setCardApproval(rs.getString("credit_card_approval"));
+			card.setCardStatus(rs.getString("credit_card_status"));
 			
 			list.add(card);
 

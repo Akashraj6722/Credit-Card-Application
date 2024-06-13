@@ -12,9 +12,16 @@ public class CreditCardDetails {
 	String cardAppliedDate;
 	String validity;
 	String cardApproval;
+	String cardStatus;
 	
 	
 	
+	public String getCardStatus() {
+		return cardStatus;
+	}
+	public void setCardStatus(String cardStatus) {
+		this.cardStatus = cardStatus;
+	}
 	public String getCardApproval() {
 		return cardApproval;
 	}

@@ -10,17 +10,23 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.chainsys.model.CreditCardDetails;
+import com.chainsys.model.Details;
+import com.chainsys.model.EmploymentDetails;
 import com.chainsys.util.AccountRecords;
 import com.chainsys.util.ApprovalRecords;
 import com.chainsys.util.CardRecords;
+import com.chainsys.util.EmploymentRecords;
 import com.chainsys.util.Records;
 
 @WebServlet("/AdminServlet")
 public class AdminServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	CreditCardDetails card = new CreditCardDetails();
+	Details details=new Details();
+	EmploymentDetails employment= new EmploymentDetails();
 
 	public AdminServlet() {
 		super();
@@ -102,8 +108,11 @@ public class AdminServlet extends HttpServlet {
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+		
+		HttpSession ses=request.getSession();
 
 		try {
+			ses.setAttribute("image", EmploymentRecords.read(details,employment));
 			request.setAttribute("values", CardRecords.read());
 			request.getRequestDispatcher("CreditCardApproval.jsp").forward(request, response);
 		} catch (ClassNotFoundException | SQLException e) {

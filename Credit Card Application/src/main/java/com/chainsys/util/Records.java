@@ -13,7 +13,7 @@ public class Records {
 	public static void insert(Details details) throws ClassNotFoundException, SQLException {
 
 		Connection connect = ConnectUtil.getConnection();
-		String query = "INSERT INTO user_details(first_name,last_name,dob,aadhaar_number,pan_number,email_id,phone_number,password) VALUES(?,?,?,?,?,?,?,?)";
+		String query = "INSERT INTO user_details(first_name,last_name,dob,aadhaar_number,aadhaar_proof,pan_number,pan_proof,email_id,phone_number,password) VALUES(?,?,?,?,?,?,?,?,?,?)";
 
 		PreparedStatement pr = connect.prepareStatement(query);
 
@@ -21,10 +21,12 @@ public class Records {
 		pr.setString(2, details.getlName());
 		pr.setString(3, details.getDob());
 		pr.setString(4, details.getAadhaar());
-		pr.setString(5, details.getPan());
-		pr.setString(6, details.getMail());
-		pr.setString(7, details.getPhone());
-		pr.setString(8, details.getPassword());
+		pr.setBytes(5, details.getAadhaarProof());
+		pr.setString(6, details.getPan());
+		pr.setBytes(7, details.getAadhaarProof());
+		pr.setString(8, details.getMail());
+		pr.setString(9, details.getPhone());
+		pr.setString(10, details.getPassword());
 
 		pr.executeUpdate();
 		
@@ -107,14 +109,16 @@ public static void readSpecific(Details details) throws ClassNotFoundException, 
 
 		PreparedStatement pr = connect.prepareStatement(query);
 
-		pr.setString(1, details.getPhone());
+		pr.setString(1, details.getMail());
 		pr.setString(2, details.getPassword());
+
+		
 
 		ResultSet rs = pr.executeQuery();
 
 		if (rs.next()) {
 			
-			details.setCustomerID(rs.getInt("customer_id"));
+			details.setCustomerID(rs.getInt("id"));
 			details.setfName(rs.getString("first_name"));
 			details.setlName(rs.getString("last_name"));
 			details.setDob(rs.getString("dob"));
@@ -146,7 +150,6 @@ public static String readMail(int id) throws ClassNotFoundException, SQLExceptio
 //		
 //		details.setMail(rs.getString("email_id"));
 		mail=rs.getString("email_id");
-		System.out.println(mail);
 		
 	}
 	return mail;

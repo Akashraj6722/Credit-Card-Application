@@ -2,6 +2,7 @@
     pageEncoding="ISO-8859-1"%>
      <%@ page import="java.util.ArrayList" %>
     <%@ page import="com.chainsys.model.CreditCardDetails" %>
+    <%@ page import="java.io.PrintWriter" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -16,6 +17,29 @@
 
 ArrayList<CreditCardDetails> list=(ArrayList<CreditCardDetails>)request.getAttribute("values");
 for(CreditCardDetails list1:list){
+	
+	String numberString=list1.getCardNumber();
+
+	
+	 if (numberString.length() == 16) {
+         String[] parts = numberString.split("(?<=\\G.{4})");
+         
+         
+//         for (int i = 0; i < 4; i++) {
+//             System.out.println("Group " + (i + 1) + ": " + parts[i]);
+//         }
+         String part1 = parts[0];
+         String part2 = parts[1];
+         String part3 = parts[2];
+         String part4 = parts[3];
+         
+         System.out.println("Part 1: " + part1);
+         System.out.println("Part 2: " + part2);
+         System.out.println("Part 3: " + part3);
+         System.out.println("Part 4: " + part4);
+         
+         PrintWriter outs = response.getWriter();
+
 %>
 
 
@@ -28,10 +52,10 @@ for(CreditCardDetails list1:list){
 						src="/ProjectImages/Rupay-Logo.png" width="80px">
 				</div>
 				<div class="row card-no-silver">
-					<p>xxxx</p>
-					<p>xxxx</p>
-					<p>xxxx</p>
-					<p>xxxx</p>
+					<p><%= part1 %></p>
+					<p><%= part2  %></p>
+					<p><%= part3 %></p>
+					<p><%= part4%></p>
 				</div>
 				<div class="row card-holder-silver">
 					<p>CARD HOLDER</p>
@@ -62,7 +86,10 @@ for(CreditCardDetails list1:list){
 			</div>
 		</div>
 	</div>
-<%} %>
+<%
+	 }
+	 
+	 }%>
 
 </body>
 

@@ -10,7 +10,7 @@ public class ApprovalRecords {
 	
 	public static void approve(CreditCardDetails card) throws ClassNotFoundException, SQLException {
 		Connection connect=ConnectUtil.getConnection(); 
-		String query="UPDATE credit_card_details SET credit_card_approval='Approved' WHERE customer_id=? ";
+		String query="UPDATE credit_card_details SET credit_card_approval='Approved',credit_card_status='Active' WHERE customer_id=? ";
 		
 		PreparedStatement pr=connect.prepareStatement(query);
 		pr.setInt(1, card.getId());
@@ -23,7 +23,7 @@ public class ApprovalRecords {
 	
 	public static void reject(CreditCardDetails card) throws ClassNotFoundException, SQLException {
 		Connection connect=ConnectUtil.getConnection(); 
-		String query="UPDATE credit_card_details SET credit_card_approval='Rejected' WHERE customer_id=? ";
+		String query="UPDATE credit_card_details SET credit_card_approval='Rejected',credit_card_status='Not active' WHERE customer_id=? ";
 		
 		PreparedStatement pr=connect.prepareStatement(query);
 		pr.setInt(1, card.getId());

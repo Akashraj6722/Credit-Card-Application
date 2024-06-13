@@ -7,7 +7,9 @@ public class Details {
 	String lName;
 	String dob;
 	String aadhaar;
+	byte[] aadhaarProof;
 	String pan;
+	byte[] panProof;
 	String mail;
 	String phone;
 	String password;
@@ -15,6 +17,18 @@ public class Details {
 	
 	
 	
+	public byte[] getAadhaarProof() {
+		return aadhaarProof;
+	}
+	public void setAadhaarProof(byte[] aadhaarProof) {
+		this.aadhaarProof = aadhaarProof;
+	}
+	public byte[] getPanProof() {
+		return panProof;
+	}
+	public void setPanProof(byte[] panProof) {
+		this.panProof = panProof;
+	}
 	public String getMail() {
 		return mail;
 	}

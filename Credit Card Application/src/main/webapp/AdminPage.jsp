@@ -22,7 +22,7 @@
 	<div class="main-content">
 		<div class="card">
 			<form action="AdminServlet" method="post">
-				<button class="btn btn secondary" value="submit">To Approve Customer's Credit Card
+				<button class="btn btn secondary" value="submit">To Approve/reject Customer's Credit Card
 					</button>
 				<!-- <a href="">Account Details</a> -->
 			</form>

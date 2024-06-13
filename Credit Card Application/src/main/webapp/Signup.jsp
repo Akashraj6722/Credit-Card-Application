@@ -8,14 +8,12 @@
     
 </head>
 <body>
-
-
-    <div class="nav" style="background-color: rgb(20, 136, 236);">
+ <div class="nav" style="background-color: rgb(20, 136, 236);">
 
         <div class="nav1">
             <ul>
                 <li><a href="MainPage.jsp">Home</a></li>
-                
+
 
             </ul>
         </div>
@@ -26,73 +24,83 @@
         <div class="nav3">
             <ul>
                 <li><a href="#">Help</a></li>
-              
+
             </ul>
         </div>
 
     </div>
 
     <div class="box">
-        <form action="BankServlet" method="post" onsubmit="return validatePassword()">
+        <form action="BankServlet" method="post" onsubmit="return validatePassword()"enctype="multipart/form-data">
             <div class="row">
 
+                <ul>
+                    <li> <label class="fName" for="fName">First Name</label></li>
+                    <li><input type="text" id="fName" name="fName" placeholder="Enter Your FirstName" required ></li>
+                    <br>
 
-                <div class="column1">
-                    <ul>
-                        <li> <label class="fName" for="fName">First Name:</label></li><br>
-                        <li><label class="lName " for="lName">Last Name: </label></li><br>
-                        <li> <label class="DOB " for="DOB">Date.Of.Birth:</label></li><br>
-                        <li> <label for="aadhaar" class="aadhaar">Aadhaar Number:</label></li><br>
-                        <li> <label for="pan" class="pan">PAN Number:</label> </li><br>
-                        <li> <label for="mail" class="mail">Email:</label></li><br>
-                        <li> <label for="ph" class="phone">Phone Number:</label></li><br>
-<!--                         <li><label for="accountType" class="accountType">Account Type</label></li><br>
- -->                    <li> <label for="pass" class="pass">Password:</label></li><br>
-                        <li> <label for="repass" class="repass">Confirm Password:</label></li><br>
+                    <li><label class="lName " for="lName">Last Name</label></li>
+                    <li><input type="text" id="lName" name="lName" placeholder="Enter Your LastName" required></li>
+                    <br>
 
-                    </ul>
-                </div>
+                    <li> <label class="DOB " for="DOB">Date.Of.Birth</label></li>
+                    <li> <input type="date" id="DOB" name="DOB" required max="2006-01-01"></li><br>
 
-                <div class="column2">
-                    <ul>
-                        <li><input type="text" id="fName" name="fName" placeholder="Enter Your FirstName" required></li><br>
-                        <li><input type="text" id="lName" name="lName"  placeholder="Enter Your LastName" required></li><br>
-                        <li> <input type="date" id="DOB" name="DOB"  required></li><br>
-                        <li><input type="text" id="aadhaar" name="aadhaar"  placeholder="Enter  Aadhaar Number" pattern="[0-9]{12}" required></li><br>
-                        <li><input type="text" id="pan" name="pan"  placeholder="Enter  PAN Number" pattern="[A-Z]{5}[0-9]{4}[A-Z]{1}" required></li><br>
-                        <li><input type="text" id="mail" name="mail"  placeholder="Enter Your Mail-id" pattern="[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+[com]$" required ></li><br>
-                        <li><input type="tel" id="ph" name="ph"  placeholder="+91" pattern="[0-9]{10}" required ></li><br>
-                       <!--  <li><select  name="accountType" id="accountType">
+
+                    <li> <label for="aadhaar" class="aadhaar">Aadhaar Number</label></li>
+                    <li><input type="text" id="aadhaar" name="aadhaar" placeholder="Enter  Aadhaar Number"
+                            pattern="[0-9]{12}" required><input type="file" name="aadhaarProof"   required></input></li><br>
+
+                    <li> <label for="pan" class="pan">PAN Number</label> </li>
+                    <li><input type="text" id="pan" name="pan" placeholder="Enter  PAN Number"
+                            pattern="[A-Z]{5}[0-9]{4}[A-Z]{1}" required><input type="file" name="panProof"   required></input></li><br>
+
+                    <li> <label for="mail" class="mail">Email</label></li>
+                    <li><input type="text" id="mail" name="mail" placeholder="Enter Your Mail-id"
+                            pattern="[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+[com]$" required></li><br>
+
+                    <li> <label for="ph" class="phone">Phone Number</label></li>
+                    <li><input type="tel" id="ph" name="ph" placeholder="+91" pattern="[0-9]{10}" required></li><br>
+
+                    <!--<li><label for="accountType" class="accountType">Account Type</label></li><br>
+                            <li><select  name="accountType" id="accountType">
                               <option value="Select"> Select Any One </option>
                               <option value="Savings Account">Savings Account</option>
                               <option value="Current Account">Current Account</option>
                            </select></li><br> -->
-                           
-                        <li><input type="text" id="pass" name="pass" placeholder="Atleast 8 Characters" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*()_+.])(?=.*\\d).{8,}$"required ></li><br>
-                        <li><input type="text" id="repass" name="repass" placeholder="Re-Enter Password" required ></li><br>
+                    <li> <label for="pass" class="pass">Password</label></li>
+                    <li><input type="password" id="pass" name="pass" placeholder="Atleast 8 Characters"
+                            pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*()_+.])(?=.*\\d).{8,}$" required></li><br>
 
-                    </ul>
-                </div>
+                    <li> <label for="repass" class="repass">Confirm Password</label></li>
+                    <li><input type="password" id="repass" name="repass" placeholder="Re-Enter Password" required></li>
+                    <br>
 
+
+                </ul>
             </div>
             <div class="submit">
                 <button type="submit">SUBMIT</button>
-
+        
             </div>
 
-        </form>
+
     </div>
-    
+   
+
+    </form>
+    </div>
+
     <script>
-        function validatePassword(){
+        function validatePassword() {
 
-            var password= document.getElementsByName("fName").value;
+            var password = document.getElementsByName("pass")[0].value;
             console.log(password);
-            var rePassword= document.getElementsByName("repass").value;
+            var rePassword = document.getElementsByName("repass")[0].value;
 
-            if(password!=rePassword){
-               
-                alert ("Passwords dont match");
+            if (password != rePassword) {
+
+                alert("Passwords dont match");
                 return false;
             }
             return true;
@@ -102,11 +110,27 @@
 </body>
 
 <style>
-    .nav{
-    display: flex;
-    justify-content: space-between;
-    
-}
+    li input{
+        width: 190px;display: flex;
+        justify-content: center;
+    }
+ 
+    .row li{
+        list-style: none;
+        display: flex;
+        
+    }
+    .row{
+        margin-top: 30px;
+        margin-left: 45px;
+        
+    }
+   
+    .nav {
+        display: flex;
+        justify-content: space-between;
+
+    }
 
     .nav ul {
         list-style-type: none;
@@ -114,12 +138,12 @@
         padding: 0;
     }
 
-    
-    
 
-    .nav2{
-        font-family:Arial, Helvetica, sans-serif;
-        margin-top:10px;
+
+
+    .nav2 {
+        font-family: Arial, Helvetica, sans-serif;
+        margin-top: 10px;
     }
 
 
@@ -134,69 +158,46 @@
     .nav ul li a:hover {
         background-color: #555;
     }
-    body{
+
+    body {
         background-image: url(/ProjectImages/Moneymate_Bestcreditcardstudents.webp);
         background-repeat: no-repeat;
         background-size: 1800px;
 
     }
-    .DOB {
-        margin-top: 40px;
-    }
+    button{
+        padding: 4px;
+        color: white;
 
-     .column1 label .fName{
-             margin-top: 48px;
-     
-     }
+        background-color:rgb(20, 136, 236);
+
     
-    #fName {
-        margin-top: 48px;
+    
     }
+button:hover{
+    background-color: rgb(13, 176, 13);
+
+}
+
 
     .box {
         border: 2px solid;
-        box-shadow: 4px 4px 4px;
-        width: 380px;
-        height: 420px;
-        justify-content: center;
-
-
+        box-shadow: 2px 2px 2px;
+        /* display: flex; */
+        margin-left: 6%;
+        margin-top: 2%;
+        /* justify-content: center; */
+        width: 440px;
+        height: 580px;
     }
 
-    .row {
-        margin-top: 13%;
-    
-        height: 45vh;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        gap: 20px;
-    }
-
+   
     .submit {
-        display: flex;
-        justify-content: center;
-        margin-top: 78px;
-
+        margin-left: 190px;
+        margin-top: 10px;
     }
      
-    .column1 ul li {
-        font-weight: bold;
-        
-    }
 
-    .column2 ul,
-    .column1 ul {
-
-        list-style: none;
-    }
-
-
-    .box {
-        display: flex;
-        margin-left: 15%;
-        margin-top: 7%;
-    }
 
     * {
         padding: 0px;
@@ -215,5 +216,4 @@
     .navbar h1 {
         margin-top: 30px;
     }
-</style>
-</html>
+</style></html>

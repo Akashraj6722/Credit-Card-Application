@@ -13,15 +13,19 @@
 <body>
 	<table>
 		<tr>
-			<th>customer_id</th>
-			<th>account_number</th>
-			<th>credit_card_number</th>
-			<th>credit_card_type</th>
-			<th>credit_card_approval</th>
-			<th> </th>
+			<th>Customer's ID</th>
+			<th>Account Number</th>
+			<th>Credit Card Number</th>
+			<th>Credit Card Type</th>
+			<th>Credit Card Status</th>
+			<th>Credit Card Approval</th>
+			<th>Income Proof </th>
+		
 		</tr>
 
 		<%
+		HttpSession se=request.getSession();
+		byte[] image=(byte[])se.getAttribute("image");
 		ArrayList<CreditCardDetails> list = (ArrayList<CreditCardDetails>) request.getAttribute("values");
 		for (CreditCardDetails list1 : list){
 		%>
@@ -32,8 +36,12 @@
 			<td><%=list1.getAccountNumber()%></td>
 			<td><%=list1.getCardNumber()%></td>
 			<td><%=list1.getCardType()%></td>
+			<td><%=list1.getCardStatus() %>
 			<td><%=list1.getCardApproval()%></td>
+			<td><%=image %></td>
+			
 			<td>
+		
 			<div class="formAction">
 			<form action="AdminServlet" method="get">
 		     <input type="hidden" name="action" value= "update">
@@ -49,7 +57,8 @@
 			 <button type="submit" value="submit">Reject</button>
 			</form>
 			</div>
-		</tr>
+			</td>
+	</tr>
 		
 		<%} %>
 </body>

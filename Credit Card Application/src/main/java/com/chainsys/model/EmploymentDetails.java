@@ -7,7 +7,16 @@ public class EmploymentDetails {
 	String designation;
 	
 		Long income;
+		byte[] incomeProof;
 	
+		
+		
+	public byte[] getIncomeProof() {
+			return incomeProof;
+		}
+		public void setIncomeProof(byte[] incomeProof) {
+			this.incomeProof = incomeProof;
+		}
 	public Long getIncome() {
 		return income;
 	}
