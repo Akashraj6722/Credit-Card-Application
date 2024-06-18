@@ -16,6 +16,7 @@ import javax.servlet.http.HttpSession;
 import javax.servlet.http.Part;
 
 import com.chainsys.model.EmploymentDetails;
+import com.chainsys.model.PreviewDetails;
 import com.chainsys.model.Details;
 import com.chainsys.model.BankDetails;
 import com.chainsys.model.CreditCardDetails;
@@ -23,7 +24,6 @@ import com.chainsys.util.AccountRecords;
 import com.chainsys.util.CardRecords;
 import com.chainsys.util.EmploymentRecords;
 import com.chainsys.util.Records;
-import com.chainsys.model.Details;
 
 /**
  * Servlet implementation class CardServlet
@@ -123,7 +123,6 @@ public class CardServlet extends HttpServlet {
 				request.setAttribute("values", PreviewDetails.display(card));
 				request.getRequestDispatcher("PreviewSilver.jsp").forward(request, response);
 
-//			response.sendRedirect("CardSilver.jsp");
 
 			} else if (income >= 400000 && income < 600000) {
 				System.out.println("You are eligible for Gold Card");

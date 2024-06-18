@@ -7,9 +7,27 @@
 <title>Insert title here</title>
 </head>
 <body>
-<div class="header">
-        Money
+<div class="nav" style="background-color: rgb(20, 136, 236);">
+
+        <div class="nav1">
+            <ul>
+                <li><a href="MainPage.jsp">Home</a></li>
+
+
+            </ul>
+        </div>
+        <div class="nav2">
+            <h1><img alt="" src="images/logo-no-background.png"  style="width: 150px;"></h1>
+        </div>
+        <div class="nav3">
+            <ul>
+                <li><a href="#">Help</a></li>
+
+            </ul>
+        </div>
+
     </div>
+
     <div class="align1">
         <div class="box">
             <div class="container">
@@ -19,7 +37,7 @@
                             <img src="" class="map-img">
                             <div class="row">
                                 <img src="https://i.ibb.co/G9pDnYJ/chip.png" width="50px">
-                                <img src="/ProjectImages/Rupay-Logo.png" width="80px">
+                                <img src="images/Rupay-Logo.png" width="80px">
                             </div>
                             <div class="row card-no-silver">
                                 <p>xxxx</p>
@@ -52,7 +70,7 @@
                             </div>
                             <div class="row signature-silver">
                                 <p>CUSTOMER SIGNATURE</p>
-                                <img src="https://i.ibb.co/WHZ3nRJ/visa.png" width="50px">
+                                <img src="images/Rupay-Logo.png" width="50px">
                             </div>
                         </div>
                     </div>
@@ -67,11 +85,11 @@
                 </div>
                 <div>
                     <ul>
-                        <li>Welcome e-Gift Voucher worth Rs. 5,000 on joining</li><br>
-                        <li>Get free movie tickets worth Rs. 6,000 every year</li><br>
-                        <li>Earn upto 50,000 Bonus Reward Points worth <br>
-                            Rs. 12,500/year</li><br>
-                        <li>Complimentary membership to Club Vistara and <br> Trident Privilege program</li>
+                        <li>Welcome e-Gift Voucher worth Rs. 2,000 on joining</li><br>
+                        <li>Get free movie tickets worth Rs. 3,000 every year</li><br>
+                        <li>Earn upto 20,000 Bonus Reward Points worth <br>
+                            Rs. 2,500/year</li><br>
+                        <li></li>
                     </ul>
                 </div>
                 <div class="apply">
@@ -90,7 +108,7 @@
                             <img src="" class="map-img">
                             <div class="row">
                                 <img src="https://i.ibb.co/G9pDnYJ/chip.png" width="50px">
-                                <img src="https://i.ibb.co/WHZ3nRJ/visa.png" width="50px">
+                                <img src="images/pulse.png" width="50px">
                             </div>
                             <div class="row card-no-gold">
                                 <p>xxxx</p>
@@ -123,7 +141,7 @@
                             </div>
                             <div class="row signature-gold">
                                 <p>CUSTOMER SIGNATURE</p>
-                                <img src="https://i.ibb.co/WHZ3nRJ/visa.png" width="50px">
+                                <img src="images/pulse.png" width="50px">
                             </div>
                         </div>
                     </div>
@@ -138,11 +156,11 @@
                 </div>
                 <div>
                     <ul>
-                        <li>Welcome e-Gift Voucher worth Rs. 5,000 on joining</li><br>
-                        <li>Get free movie tickets worth Rs. 6,000 every year</li><br>
+                        <li>Welcome e-Gift Voucher worth Rs. 3,000 on joining</li><br>
+                        <li>Get free movie tickets worth Rs. 4,000 every year</li><br>
                         <li>Earn upto 50,000 Bonus Reward Points worth <br>
-                            Rs. 12,500/year</li><br>
-                        <li>Complimentary membership to Club Vistara and <br> Trident Privilege program</li>
+                            Rs. 6,500/year</li><br>
+                        <li></li>
                     </ul>
                 </div>
                 <div class="apply">
@@ -166,7 +184,7 @@
                             <img src="" class="map-img">
                             <div class="row">
                                 <img src="https://i.ibb.co/G9pDnYJ/chip.png" width="50px">
-                                <img src="/ProjectImages/pulse.png" width="60px">
+                                <img src="https://i.ibb.co/WHZ3nRJ/visa.png" width="60px">
                             </div>
                             <div class="row card-no-platinum">
                                 <p>xxxx</p>
@@ -213,11 +231,11 @@
                 </div>
                 <div>
                     <ul>
-                        <li>Welcome e-Gift Voucher worth Rs. 5,000 on joining</li><br>
-                        <li>Get free movie tickets worth Rs. 6,000 every year</li><br>
+                        <li>Welcome e-Gift Voucher worth Rs. 4,000 on joining</li><br>
+                        <li>Get free movie tickets worth Rs. 5,000 every year</li><br>
                         <li>Earn upto 50,000 Bonus Reward Points worth <br>
-                            Rs. 12,500/year</li><br>
-                        <li>Complimentary membership to Club Vistara and <br> Trident Privilege program</li>
+                            Rs. 10,500/year</li><br>
+                        <li>Complimentary membership to Club Vistara and <br> Trident Privil</li>
                     </ul>
                 </div>
                 <div class="apply">
@@ -234,7 +252,7 @@
                             <img src="https://i.ibb.co/PYss3yv/map.png" class="map-img">
                             <div class="row">
                                 <img src="https://i.ibb.co/G9pDnYJ/chip.png" width="50px">
-                                <img src="/ProjectImages/Mastercard-Logo-2016-2020.png" width="80px">
+                                <img src="images/Mastercard-Logo-2016-2020.png" width="80px">
                             </div>
                             <div class="row card-no-elite">
                                 <p>xxxx</p>
@@ -267,7 +285,7 @@
                             </div>
                             <div class="row signature-elite">
                                 <p>CUSTOMER SIGNATURE</p>
-                                <img src="https://i.ibb.co/WHZ3nRJ/visa.png" width="50px">
+                                <img src="images/Mastercard-Logo-2016-2020.png" width="50px">
                             </div>
                         </div>
                     </div>
@@ -296,6 +314,40 @@
 
 </body>
 <style>
+ .nav {
+        display: flex;
+        justify-content: space-between;
+        height:75px;
+
+    }
+
+    .nav ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+    }
+
+
+
+
+    .nav2 {
+        font-family: Arial, Helvetica, sans-serif;
+        margin-top: 6px;
+    }
+
+
+    .nav ul li a {
+        font-size: 25px;
+        display: block;
+        color: rgb(0, 0, 0);
+        padding: 14px 16px;
+        text-decoration: none;
+    }
+
+    .nav ul li a:hover {
+        background-color: #555;
+    }
+
     
       .header {
         background-color: rgb(20, 136, 236);

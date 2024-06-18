@@ -38,6 +38,26 @@ for(CreditCardDetails list1:list){
         System.out.println("Part 4: " + part4);
         
 %>
+<div class="nav" style="background-color: rgb(20, 136, 236);">
+
+        <div class="nav1">
+            <ul>
+                <li><a href="MainPage.jsp">Home</a></li>
+
+
+            </ul>
+        </div>
+        <div class="nav2">
+            <h1><img alt="" src="images/logo-no-background.png"  style="width: 150px;"></h1>
+        </div>
+        <div class="nav3">
+            <ul>
+                <li><a href="#">Help</a></li>
+
+            </ul>
+        </div>
+
+    </div>
 
 	<div class="box">
 		<div class="container">
@@ -92,6 +112,46 @@ for(CreditCardDetails list1:list){
 	 }%>
 </body>
 <style>
+* {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        
+    }
+ .nav {
+        display: flex;
+        justify-content: space-between;
+        height:75px;
+
+    }
+
+    .nav ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+    }
+
+
+
+
+    .nav2 {
+        font-family: Arial, Helvetica, sans-serif;
+        margin-top: 10px;
+    }
+
+
+    .nav ul li a {
+        font-size: 25px;
+        display: block;
+        color: rgb(0, 0, 0);
+        padding: 14px 16px;
+        text-decoration: none;
+    }
+
+    .nav ul li a:hover {
+        background-color: #555;
+    }
+
 .word {
 	/* margin-left: -250px; */
 	margin-top: 20px;

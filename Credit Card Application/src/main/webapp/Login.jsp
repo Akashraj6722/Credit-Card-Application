@@ -17,7 +17,8 @@
             </ul>
         </div>
         <div class="nav2">
-            <h1>LOGIN</h1>
+            <h1><img alt="" src="images/logo-no-background.png"  style="width: 150px;"></h1>
+
             <!-- <img src="/ProjectImages/image.png" alt="" style="width: 40px;"> -->
         </div>
         <div class="nav3">
@@ -46,7 +47,7 @@
 
                         <div class="column2">
                             <ul>
-                                <li><input type="tel" id="mail" name="mail" placeholder="Enter Your mail"  required>
+                                <li><input type="text" id="mail" name="mail" placeholder="Enter Your mail"  required>
                                 </li>
                                 <br>
 
@@ -72,9 +73,11 @@
 
 <style>
 
+
 .nav{
     display: flex;
     justify-content: space-between;
+    height:75px;
     
 }
 
@@ -86,7 +89,7 @@
 
     .nav2{
         font-family:Arial, Helvetica, sans-serif;
-        margin-top:10px;
+        margin-top:8px;
     }
 
 
@@ -110,7 +113,7 @@
         margin-right: 90px;
     }
    body{
-    background-image: url(/ProjectImages/login1.png);
+    background-image: url(images/login1.png);
     background-repeat: no-repeat;
     background-size:800px;
     background-position-y:100px ;

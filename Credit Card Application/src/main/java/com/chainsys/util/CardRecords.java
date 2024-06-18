@@ -42,16 +42,16 @@ public static void insert(CreditCardDetails card, Details details ,BankDetails b
   public static void update(CreditCardDetails card,Details details) throws ClassNotFoundException, SQLException {
 	  Connection connect=ConnectUtil.getConnection();
 		
-		String query="UPDATE credit_card_details SET credit_card_pin=? WHERE credit_card_number=?";
+		String query="UPDATE credit_card_details SET credit_card_pin=? WHERE customer_id=? AND credit_card_number=?";
 		PreparedStatement pr =connect.prepareStatement(query);
 		
 		pr.setInt(1, card.getPin());
-//		pr.setInt(2,details.getCustomerID());
-		pr.setString(2, card.getCardNumber());
+		pr.setInt(2,details.getCustomerID());
+		pr.setString(3, card.getCardNumber());
 		
 		pr.executeUpdate();
-		details.getCustomerID();
-		System.out.println("Setting...PIN");
+		
+		System.out.println("Setting...PIN customer's ID"+details.getCustomerID());
 
 	  
 	  
@@ -88,4 +88,23 @@ public static void insert(CreditCardDetails card, Details details ,BankDetails b
 		
 
 	}
+  
+  public static boolean check(CreditCardDetails card) throws ClassNotFoundException, SQLException {
+	  
+	  Connection connect = ConnectUtil.getConnection();
+		String query = "SELECT credit_card_number FROM credit_card_details WHERE credit_card_number=? AND credit_card_approval='Approved' ";
+			
+		PreparedStatement pr = connect.prepareStatement(query);
+		pr.setString(1, card.getCardNumber());
+		ResultSet rs = pr.executeQuery();
+
+		if (rs.next()) {
+			
+			System.out.println("success");
+			return true;
+		}
+		return false;
+		
+	
+  }
 }

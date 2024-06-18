@@ -41,7 +41,26 @@ for(CreditCardDetails list1:list){
          PrintWriter outs = response.getWriter();
 
 %>
+<div class="nav" style="background-color: rgb(20, 136, 236);">
 
+        <div class="nav1">
+            <ul>
+                <li><a href="MainPage.jsp">Home</a></li>
+
+
+            </ul>
+        </div>
+        <div class="nav2">
+            <h1><img alt="" src="images/logo-no-background.png"  style="width: 150px;"></h1>
+        </div>
+        <div class="nav3">
+            <ul>
+                <li><a href="#">Help</a></li>
+
+            </ul>
+        </div>
+
+    </div>
 
 	<div class="card-silver">
 		<div class="card-inner-silver">
@@ -49,7 +68,7 @@ for(CreditCardDetails list1:list){
 				<img src="" class="map-img">
 				<div class="row">
 					<img src="https://i.ibb.co/G9pDnYJ/chip.png" width="50px"> <img
-						src="/ProjectImages/Rupay-Logo.png" width="80px">
+						src="images/Rupay-Logo.png" width="80px">
 				</div>
 				<div class="row card-no-silver">
 					<p><%= part1 %></p>
@@ -81,7 +100,7 @@ for(CreditCardDetails list1:list){
 				</div>
 				<div class="row signature-silver">
 					<p>CUSTOMER SIGNATURE</p>
-					<img src="https://i.ibb.co/WHZ3nRJ/visa.png" width="50px">
+					<img src="images/Rupay-Logo.png" width="50px">
 				</div>
 			</div>
 		</div>
@@ -94,6 +113,46 @@ for(CreditCardDetails list1:list){
 </body>
 
 <style>
+ * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        
+    }
+ .nav {
+        display: flex;
+        justify-content: space-between;
+        height:75px;
+
+    }
+
+    .nav ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+    }
+
+
+
+
+    .nav2 {
+        font-family: Arial, Helvetica, sans-serif;
+        margin-top: 10px;
+    }
+
+
+    .nav ul li a {
+        font-size: 25px;
+        display: block;
+        color: rgb(0, 0, 0);
+        padding: 14px 16px;
+        text-decoration: none;
+    }
+
+    .nav ul li a:hover {
+        background-color: #555;
+    }
+
 
 .card-silver,
     .card-gold,

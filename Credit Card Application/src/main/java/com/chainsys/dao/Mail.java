@@ -15,16 +15,6 @@ public class Mail {
 
     static Session newSession = null;
 
-//    public static void main(String[] args) {
-//        try {
-//            setProperties();
-//            setMailBody(null, null);
-//            System.out.println("Email sent successfully.");
-//        } catch (Exception ex) {
-//            System.out.println("Failed to send email.");
-//            ex.printStackTrace();
-//        }
-//    }
 
     public static void setProperties() {
         Properties properties = System.getProperties();
@@ -47,7 +37,6 @@ public class Mail {
 //        String emailBody = "Your  card has been Approved";
 
         Message mimeMessage = new MimeMessage(newSession);
-//        mimeMessage.setFrom(new InternetAddress("your-email@example.com"));
 
 //        for (String recipient : emailRecipients) {
             mimeMessage.addRecipient(Message.RecipientType.TO, new InternetAddress(emailRecipient));

@@ -96,7 +96,6 @@ public static boolean check(Details details) throws ClassNotFoundException, SQLE
 
 			
 		}
-//		System.out.println("Invalid account");
 		return list;
 		
 
@@ -146,9 +145,7 @@ public static String readMail(int id) throws ClassNotFoundException, SQLExceptio
 	ResultSet rs = pr.executeQuery();
 
 	if (rs.next()) {
-//		Details details=new Details();
-//		
-//		details.setMail(rs.getString("email_id"));
+
 		mail=rs.getString("email_id");
 		
 	}

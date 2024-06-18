@@ -41,17 +41,29 @@ public class PinServlet extends HttpServlet {
 		for(Details list1: list) {
 		
 			
-			System.out.println(list1.getCustomerID());
+			System.out.println("pinServlet:customer's ID"+list1.getCustomerID());
+        details.setCustomerID(list1.getCustomerID());
 		card.setCardNumber(request.getParameter("cardNumber"));
 		int pin=Integer.parseInt(request.getParameter("pin"));
 		card.setPin(pin);
 		
 		try {
-			CardRecords.update(card, details);
+			System.out.println(CardRecords.check(card));
+			if(CardRecords.check(card)==true) {
+				
+				CardRecords.update(card, details);
+				response.sendRedirect("CustomerDetails.jsp");
+			
+			}else {
+				System.out.println("Sorry your card is not APPROVED yet");
+				response.sendRedirect("SetPin.jsp");
+			}
 		} catch (ClassNotFoundException | SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		
+		
 		
 		}
 	

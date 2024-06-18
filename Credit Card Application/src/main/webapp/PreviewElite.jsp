@@ -33,14 +33,33 @@
 			System.out.println("Part 3: " + part3);
 			System.out.println("Part 4: " + part4);
 	%>
+<div class="nav" style="background-color: rgb(20, 136, 236);">
 
+        <div class="nav1">
+            <ul>
+                <li><a href="MainPage.jsp">Home</a></li>
+
+
+            </ul>
+        </div>
+        <div class="nav2">
+            <h1><img alt="" src="images/logo-no-background.png"  style="width: 150px;"></h1>
+        </div>
+        <div class="nav3">
+            <ul>
+                <li><a href="#">Help</a></li>
+
+            </ul>
+        </div>
+
+    </div>
 	<div class="card-elite">
 		<div class="card-inner-elite">
 			<div class="front-elite">
 				<img src="https://i.ibb.co/PYss3yv/map.png" class="map-img">
 				<div class="row">
 					<img src="https://i.ibb.co/G9pDnYJ/chip.png" width="50px"> <img
-						src="https://i.ibb.co/WHZ3nRJ/visa.png" width="50px">
+						src="images/Mastercard-Logo-2016-2020.png" width="50px">
 				</div>
 				<div class="row card-no-elite">
 					<p><%=part1%></p>
@@ -73,7 +92,7 @@
 				</div>
 				<div class="row signature-elite">
 					<p>CUSTOMER SIGNATURE</p>
-					<img src="https://i.ibb.co/WHZ3nRJ/visa.png" width="50px">
+					<img src="images/Mastercard-Logo-2016-2020.png" width="50px">
 				</div>
 			</div>
 		</div>
@@ -87,6 +106,46 @@
 
 </body>
 <style>
+* {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        
+    }
+ .nav {
+        display: flex;
+        justify-content: space-between;
+        height:75px;
+
+    }
+
+    .nav ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+    }
+
+
+
+
+    .nav2 {
+        font-family: Arial, Helvetica, sans-serif;
+        margin-top: 10px;
+    }
+
+
+    .nav ul li a {
+        font-size: 25px;
+        display: block;
+        color: rgb(0, 0, 0);
+        padding: 14px 16px;
+        text-decoration: none;
+    }
+
+    .nav ul li a:hover {
+        background-color: #555;
+    }
+
 .word {
 	margin-top: 20px;
 }

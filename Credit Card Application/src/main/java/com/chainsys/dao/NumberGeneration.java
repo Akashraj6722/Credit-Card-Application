@@ -6,7 +6,7 @@ public class NumberGeneration {
 
 	public static void main(String[] args) {
 
-//		
+		
 		System.out.println("ACC.No: "+accountNumber());
 		System.out.println("IFSC code: "+ifsc());
 		
@@ -110,14 +110,7 @@ public class NumberGeneration {
 			
 		}
 		String cardNumber="5"+sb.toString();
-		
-//		String [] cardArray=cardNumber.split("(?<=\\G.{4})");
-//		
-//		for(int i =0;i<4;i++) {
-//			
-//			System.out.println(cardArray[i]);
-//			
-//		}
+
 		return cardNumber;
 		
 	}
@@ -135,14 +128,7 @@ public static String rupayCreditCardNumber() {
 			
 		}
 		String cardNumber="6"+sb.toString();
-		
-//		String [] cardArray=cardNumber.split("(?<=\\G.{4})");
-//		
-//		for(int i =0;i<4;i++) {
-//			
-//			System.out.println(cardArray[i]);
-//			
-//		}
+
 		return cardNumber;
 		
 	}
@@ -161,14 +147,7 @@ public static String pulseCreditCardNumber() {
 		
 	}
 	String cardNumber="6"+sb.toString();
-	
-//	String [] cardArray=cardNumber.split("(?<=\\G.{4})");
-//	
-//	for(int i =0;i<4;i++) {
-//		
-//		System.out.println(cardArray[i]);
-//		
-//	}
+
 	return cardNumber;
 	
 }

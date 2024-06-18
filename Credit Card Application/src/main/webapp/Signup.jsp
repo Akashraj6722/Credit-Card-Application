@@ -18,7 +18,7 @@
             </ul>
         </div>
         <div class="nav2">
-            <h1>SIGNUP</h1>
+            <h1><img alt="" src="images/logo-no-background.png"  style="width: 150px;"></h1>
             <!-- <img src="/ProjectImages/image.png" alt="" style="width: 40px;"> -->
         </div>
         <div class="nav3">
@@ -36,11 +36,11 @@
 
                 <ul>
                     <li> <label class="fName" for="fName">First Name</label></li>
-                    <li><input type="text" id="fName" name="fName" placeholder="Enter Your FirstName" required ></li>
+                    <li><input type="text" id="fName" name="fName" placeholder="Enter Your FirstName" pattern="[A-Za-z]{2,20}" required ></li>
                     <br>
 
                     <li><label class="lName " for="lName">Last Name</label></li>
-                    <li><input type="text" id="lName" name="lName" placeholder="Enter Your LastName" required></li>
+                    <li><input type="text" id="lName" name="lName" placeholder="Enter Your LastName"  pattern="[A-Za-z]{1,10}" required></li>
                     <br>
 
                     <li> <label class="DOB " for="DOB">Date.Of.Birth</label></li>
@@ -129,6 +129,7 @@
     .nav {
         display: flex;
         justify-content: space-between;
+        height:75px;
 
     }
 
@@ -160,7 +161,7 @@
     }
 
     body {
-        background-image: url(/ProjectImages/Moneymate_Bestcreditcardstudents.webp);
+        background-image: url(images/Moneymate_Bestcreditcardstudents.webp);
         background-repeat: no-repeat;
         background-size: 1800px;
 
@@ -205,15 +206,5 @@ button:hover{
         box-sizing: border-box;
     }
 
-    .navbar {
-        display: flex;
-        height: 15vh;
-        justify-content: center;
-        color: aliceblue;
-        background-color: rgb(150, 26, 26);
-    }
-
-    .navbar h1 {
-        margin-top: 30px;
-    }
+   
 </style></html>

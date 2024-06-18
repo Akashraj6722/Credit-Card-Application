@@ -100,12 +100,7 @@ public class BankServlet extends HttpServlet {
 		} catch (ClassNotFoundException | SQLException e) {
 			e.printStackTrace();
 		}
-//		
-//		try {
-//			AccountRecords.read(details, bankDetails);
-//		} catch (ClassNotFoundException | SQLException e) {
-//			e.printStackTrace();
-//		}
+
 
 		response.sendRedirect("MainPage.jsp");
 

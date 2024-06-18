@@ -15,7 +15,6 @@ import javax.servlet.http.HttpSession;
 import com.chainsys.model.CreditCardDetails;
 import com.chainsys.model.Details;
 import com.chainsys.model.EmploymentDetails;
-import com.chainsys.util.AccountRecords;
 import com.chainsys.util.ApprovalRecords;
 import com.chainsys.util.CardRecords;
 import com.chainsys.util.EmploymentRecords;
@@ -51,6 +50,7 @@ public class AdminServlet extends HttpServlet {
 				String message="Your Credit Card:"+cardNumber+"has been Approved";
 				
 				ApprovalRecords.approve(card);
+				request.setAttribute("incomeProof", EmploymentRecords.read(details, employment));
 				request.setAttribute("values", CardRecords.read());
 				request.getRequestDispatcher("CreditCardApproval.jsp").forward(request, response);
 				Mail.setProperties();
@@ -100,17 +100,7 @@ public class AdminServlet extends HttpServlet {
 			
 
 		}
-		
-		
-//		try {
-////			ses.setAttribute("image", EmploymentRecords.read(details,employment));
-//			request.setAttribute("values", CardRecords.read());
-////			byte[] incomeProof=EmploymentRecords.read(details, employment);
-//			request.setAttribute("incomeProof", EmploymentRecords.read(details, employment));
-//			request.getRequestDispatcher("CreditCardApproval.jsp").forward(request, response);
-//		} catch (ClassNotFoundException | SQLException e) {
-//			e.printStackTrace();
-//		}
+
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
@@ -121,9 +111,7 @@ public class AdminServlet extends HttpServlet {
 		
 
 		try {
-//			ses.setAttribute("image", EmploymentRecords.read(details,employment));
 			request.setAttribute("values", CardRecords.read());
-//			byte[] incomeProof=EmploymentRecords.read(details, employment);
 			request.setAttribute("incomeProof", EmploymentRecords.read(details, employment));
 			request.getRequestDispatcher("CreditCardApproval.jsp").forward(request, response);
 		} catch (ClassNotFoundException | SQLException e) {

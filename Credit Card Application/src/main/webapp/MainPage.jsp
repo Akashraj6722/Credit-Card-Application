@@ -6,7 +6,7 @@
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
 </head>
-
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 <body>
 
     <div class="nav" style="background-color: rgb(20, 136, 236);">
@@ -20,7 +20,7 @@
             </ul>
         </div>
         <div class="nav2">
-            <img src="/ProjectImages/image.png" alt="" style="width: 40px;">
+            <img src="images/logo-no-background.png" alt="" style="width: 150px;">
         </div>
         <div class="nav3">
             <ul>
@@ -37,28 +37,60 @@
 
     <div class="slider">
         <div class="slides">
-            <div class="slide"><img src="slidebar1.webp" alt="Screenshot 108"></div>
-            <div class="slide"><img src="/ProjectImages/slidebar1.webp" alt="Screenshot 107" style="width: 1228px ; height: 600px;"></div>
+            <div class="slide"><img src="images/slidebar2.webp" alt="Screenshot 108"></div>
+            <div class="slide"><img src="images/slidebar1.webp" alt="Screenshot 107" style="width: 1228px ; height: 600px;"></div>
             <div class="slide"><img src="/ProjectImages/slidebar3.webp" alt="Screenshot 108"></div>
 
          
         </div>
     </div>
+     <footer>
+        <div>
+            <p>&copy; 2024 Plastic Money. All rights reserved.</p>
+            <nav>
+                <ul>
+                    <li><a href=""><i class="fas fa-phone-square-alt" style="font-size: x-large;"></i></a><p><b>+91</b>6345789645</p></li>
+                    <li><a  href=""><i class="fas fa-envelope"></i></a><p>plasticmoney@gmail.com</p></li>
+                </ul>
+            </nav>
+        </div>
+    </footer>
       
     
 
 </body>
 
 <style>
+ footer ul{
+        display: flex;
+        list-style: none;
+        justify-content: space-around;
+    }
+    footer {
+    background-color: #333; 
+    color: #fff; 
+    padding: 5px ;
+    margin: 0 auto; 
+    text-align: center; 
+    height: 120px;
+}
+footer li a{
+    color: aliceblue;
+}
+
 
 .slider {
-    width:1228px ;
-    height: 540px;
+    width:1212px ;
+    height: 510px;
 
     /* margin: 50px auto; */
     overflow: hidden;
     border: 2px solid #ddd;
     /* border-radius: 10px; */
+}
+.nav2 img{
+    margin-left: -40px;
+    
 }
 
 .slides {
@@ -84,7 +116,7 @@
 }
 
     .nav3  a,.nav1 a{
-       height: 25px;
+       height: 47px;
         font-size: 20px;
 
     }
@@ -125,7 +157,7 @@
 
     .nav2{
         margin-top: 6px;
-        margin-left: -400px;
+
     }
 
     .nav3 ul  {

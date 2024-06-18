@@ -11,26 +11,7 @@ import com.chainsys.model.Details;
 
 public class AccountRecords {
 	
-	
-//	public static void insert(Details details) throws ClassNotFoundException, SQLException {
-//
-//		Connection connect = ConnectUtil.getConnection();
-//		String query = "INSERT INTO account_details(account_type,account_number,ifsc_code)VALUES(?,?,?)";
-//
-//		PreparedStatement pr = connect.prepareStatement(query);
-//
-//		pr.setString(1, details.getfName());
-//		pr.setString(2, details.getlName());
-//		pr.setString(3, details.getDob());
-//		pr.setString(4, details.getAadhaar());
-//		pr.setString(5, details.getPan());
-//		pr.setString(6, details.getPhone());
-//		pr.setLong(7, details.getAnnualIncome());
-//		pr.setString(8, details.getPassword());
-//
-//		pr.executeUpdate();
-//
-//	}
+
 
 	public static void insert(Details details,BankDetails bankDetails) throws ClassNotFoundException, SQLException {
 		Connection connect = ConnectUtil.getConnection();
@@ -42,7 +23,6 @@ public class AccountRecords {
 		pr.setString(3, bankDetails.getIfsc());
 		
 		System.out.println("accountRecords-Insert"+details.getCustomerID());
-//		System.out.println(bankDetails.getAccountType());
 		
 
 		pr.executeUpdate();		
@@ -66,7 +46,6 @@ public class AccountRecords {
 		
 		if(rs.next()) {
 			
-//			BankDetails bankDetails=new BankDetails();
 			
 			details.setCustomerID(rs.getInt("customer_id"));
 			bankDetails.setAccountType(rs.getString("account_type"));

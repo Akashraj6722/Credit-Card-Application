@@ -81,13 +81,10 @@ public class LoginServlet extends HttpServlet {
 					
 				}else {
 				
-				/* request.setAttribute("values", Records.read(details)); */
 				session.setAttribute("values", Records.read(details));
 				request.getRequestDispatcher("CustomerDetails.jsp").forward(request, response);
 
-//				response.sendRedirect("CustomerDetails.jsp");
-//				HttpSession session=request.getSession();
-//				 session.setAttribute("phone", phone);
+
 				}
 			}
 			

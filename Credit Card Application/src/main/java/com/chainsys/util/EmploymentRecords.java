@@ -1,6 +1,5 @@
 package com.chainsys.util;
 
-import java.io.InputStream;
 import java.sql.Blob;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -8,7 +7,6 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-import com.chainsys.model.BankDetails;
 import com.chainsys.model.Details;
 import com.chainsys.model.EmploymentDetails;
 
@@ -47,7 +45,6 @@ public static ArrayList<byte[]> read(Details details,EmploymentDetails employmen
 		
 		PreparedStatement pr=connect.prepareStatement(query);
 		
-//		pr.setInt(1,details.getCustomerID());
 		
 		System.out.println("ID(Approve admin): "+ details.getCustomerID());
 		

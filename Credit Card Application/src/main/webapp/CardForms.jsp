@@ -7,6 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
+
 	<div class="details">
 		<form action="CardServlet" method="post" enctype="multipart/form-data">
 			<h2>Credit Card Application Form</h2>
