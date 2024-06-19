@@ -51,7 +51,7 @@ for(CreditCardDetails list1:list){
             </ul>
         </div>
         <div class="nav2">
-            <h1><img alt="" src="images/logo-no-background.png"  style="width: 150px;"></h1>
+            <img alt="" src="images/logo-no-background.png"  style="width: 150px;">
         </div>
         <div class="nav3">
             <ul>
@@ -65,10 +65,10 @@ for(CreditCardDetails list1:list){
 	<div class="card-silver">
 		<div class="card-inner-silver">
 			<div class="front-silver">
-				<img src="" class="map-img">
+				<img src="" class="map-img" alt="map">
 				<div class="row">
-					<img src="https://i.ibb.co/G9pDnYJ/chip.png" width="50px"> <img
-						src="images/Rupay-Logo.png" width="80px">
+					<img src="https://i.ibb.co/G9pDnYJ/chip.png" width="50px" alt="chip"> <img
+						src="images/Rupay-Logo.png" width="80px" alt="rupay">
 				</div>
 				<div class="row card-no-silver">
 					<p><%= part1 %></p>
@@ -86,11 +86,11 @@ for(CreditCardDetails list1:list){
 				</div>
 			</div>
 			<div class="back-silver">
-				<img src="" class="map-img">
+				<img src="" class="map-img" alt="map">
 				<div class="bar"></div>
 				<div class="row card-cvv-silver">
 					<div>
-						<img src="https://i.ibb.co/S6JG8px/pattern.png" width="200px">
+						<img src="https://i.ibb.co/S6JG8px/pattern.png" width="200px" alt="pattern">
 					</div>
 					<p><%= list1.getCvvNumber() %></p>
 
@@ -100,7 +100,7 @@ for(CreditCardDetails list1:list){
 				</div>
 				<div class="row signature-silver">
 					<p>CUSTOMER SIGNATURE</p>
-					<img src="images/Rupay-Logo.png" width="50px">
+					<img src="images/Rupay-Logo.png" width="50px" alt="rupay">
 				</div>
 			</div>
 		</div>

@@ -3,6 +3,7 @@ package com.chainsys.model;
 
 
 	import java.util.ArrayList;
+import java.util.List;
 
 
 
@@ -10,7 +11,7 @@ package com.chainsys.model;
 		
 		
 
-		public static ArrayList<CreditCardDetails> display(CreditCardDetails card) {
+		public static List<CreditCardDetails> display(CreditCardDetails card) {
 			
 			ArrayList<CreditCardDetails> list=new ArrayList<CreditCardDetails>();
 			card.getHolderName();
@@ -20,11 +21,15 @@ package com.chainsys.model;
 			card.getValidity();
 			
 			
-			System.out.println("working...."+card.getCardNumber());
 			list.add(card);
 			return list;
 			
 			
+			
+		}
+
+		private PreviewDetails() {
+			super();
 		}
 
 	}

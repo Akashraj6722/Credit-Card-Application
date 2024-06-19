@@ -43,7 +43,7 @@
             </ul>
         </div>
         <div class="nav2">
-            <h1><img alt="" src="images/logo-no-background.png"  style="width: 150px;"></h1>
+            <img alt="" src="images/logo-no-background.png"  style="width: 150px;">
         </div>
         <div class="nav3">
             <ul>
@@ -56,10 +56,10 @@
 	<div class="card-elite">
 		<div class="card-inner-elite">
 			<div class="front-elite">
-				<img src="https://i.ibb.co/PYss3yv/map.png" class="map-img">
+				<img src="https://i.ibb.co/PYss3yv/map.png" class="map-img" alt="map">
 				<div class="row">
-					<img src="https://i.ibb.co/G9pDnYJ/chip.png" width="50px"> <img
-						src="images/Mastercard-Logo-2016-2020.png" width="50px">
+					<img src="https://i.ibb.co/G9pDnYJ/chip.png" width="50px" alt="chip"> <img
+						src="images/Mastercard-Logo-2016-2020.png" width="50px"alt="mastercard">
 				</div>
 				<div class="row card-no-elite">
 					<p><%=part1%></p>
@@ -77,11 +77,11 @@
 				</div>
 			</div>
 			<div class="back-elite">
-				<img src="https://i.ibb.co/PYss3yv/map.png" class="map-img">
+				<img src="https://i.ibb.co/PYss3yv/map.png" class="map-img" alt="map">
 				<div class="bar"></div>
 				<div class="row card-cvv-elite">
 					<div>
-						<img src="https://i.ibb.co/S6JG8px/pattern.png" width="200px">
+						<img src="https://i.ibb.co/S6JG8px/pattern.png" width="200px" alt="pattern">
 					</div>
 					<p>824</p>
 
@@ -92,7 +92,7 @@
 				</div>
 				<div class="row signature-elite">
 					<p>CUSTOMER SIGNATURE</p>
-					<img src="images/Mastercard-Logo-2016-2020.png" width="50px">
+					<img src="images/Mastercard-Logo-2016-2020.png" width="50px" alt="mastercard">
 				</div>
 			</div>
 		</div>

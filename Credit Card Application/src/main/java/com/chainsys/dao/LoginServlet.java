@@ -21,8 +21,8 @@ import com.chainsys.util.Records;
 @WebServlet("/LoginServlet")
 public class LoginServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	Details details=new Details(); 
-	BankDetails bankDetails = new BankDetails();
+	static	Details details=new Details(); 
+	static	BankDetails bankDetails = new BankDetails();
     /**
      * @see HttpServlet#HttpServlet()
      */
@@ -32,20 +32,17 @@ public class LoginServlet extends HttpServlet {
 
     @Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		System.out.println("get");
-//		 System.out.println(details.getCustomerID());
-//		 
+		
 //	
-		 System.out.println("after Get: "+details.getCustomerID());
 
 
 		try {
 			request.setAttribute("info", AccountRecords.read(details, bankDetails));
+			request.getRequestDispatcher("AccountDetails.jsp").forward(request, response);
+
 		} catch (ClassNotFoundException | SQLException e) {
 			e.printStackTrace();
 		}
-		System.out.println("LoginServlet:get");
-		request.getRequestDispatcher("AccountDetails.jsp").forward(request, response);
 	}
 
 	
@@ -66,7 +63,6 @@ public class LoginServlet extends HttpServlet {
 		
 		session.setAttribute("email", details.getMail());
 		
-		System.out.println(details.getPhone());
 		
 		try {
 			if(Records.check(details)==true) {
@@ -89,21 +85,11 @@ public class LoginServlet extends HttpServlet {
 		} catch (ClassNotFoundException | SQLException e) {
 			e.printStackTrace();
 		}
-//		
+	
 
 	
 	}
 
-		
-//		HttpSession session=request.getSession(false);
-//		
-//		if(session!=null) {
-//			
-//			session.invalidate();
-//		}
-//		
-//		
-//		 response.sendRedirect("MainPage.jsp");
 
 	}
 

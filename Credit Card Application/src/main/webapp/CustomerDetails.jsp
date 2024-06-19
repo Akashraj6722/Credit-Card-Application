@@ -26,10 +26,10 @@
 	Details details = new Details();
 	%>
 	<div class="header">
-		<h1>
+
 		
 			<img alt="" src="images/logo-no-background.png" style="width: 150px;">
-		</h1>
+		
 
 	</div>
 	<div class="sidebar">
@@ -39,7 +39,7 @@
 		<form action="LoginServlet" method="get">
 			<button class="btn btn secondary" value="submit"><i class="fa-solid fa-file-invoice"></i>Account
 				Details</button>
-			<!-- <a href="">Account Details</a> -->
+
 		</form>
 
 		<a href="CardPage.jsp"><i class="fa-regular fa-credit-card"></i>Apply Credit Card</a>
@@ -80,7 +80,7 @@
 			<div class="card-content"><%=display.getAadhaar()%></div>
 		</div>
 		<div class="card">
-			<div class="card-header">Pan Number</div>
+			<div class="card-header">PAN</div>
 			<div class="card-content"><%=display.getPan()%></div>
 		</div>
 		<div class="card">

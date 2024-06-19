@@ -25,7 +25,7 @@ import com.chainsys.util.Records;
 		
 public class BankServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	Details details = new Details();
+	static Details details = new Details();
 
 	/**
 	 * @see HttpServlet#HttpServlet()
@@ -42,10 +42,11 @@ public class BankServlet extends HttpServlet {
 
 		try {
 			request.setAttribute("values", Records.read(details));
+			request.getRequestDispatcher("CustomerDetails.jsp").forward(request, response);
+
 		} catch (ClassNotFoundException | SQLException e) {
 			e.printStackTrace();
 		}
-		request.getRequestDispatcher("CustomerDetails.jsp").forward(request, response);
 
 	}
 
@@ -53,7 +54,7 @@ public class BankServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
-		Details details = new Details();
+		
 		BankDetails bankDetails = new BankDetails();
 
 		details.setfName(request.getParameter("fName"));
@@ -65,7 +66,9 @@ public class BankServlet extends HttpServlet {
 		details.setPhone(request.getParameter("ph"));
 		details.setPassword(request.getParameter("pass"));
 
-		InputStream inputStream = null;
+		
+
+		try {InputStream inputStream = null;
 		Part aadhaarPart = request.getPart("aadhaarProof");
 		inputStream = aadhaarPart.getInputStream();
 		details.setAadhaarProof(inputStream.readAllBytes());
@@ -76,27 +79,20 @@ public class BankServlet extends HttpServlet {
 
 		bankDetails.setAccountNumber(NumberGeneration.accountNumber());
 		bankDetails.setIfsc(NumberGeneration.ifsc());
-
-		try {
+		
+		
 			Records.insert(details);
-		} catch (ClassNotFoundException | SQLException e) {
-			e.printStackTrace();
-		}
-
-		try {
 			Records.read(details);
-		} catch (ClassNotFoundException | SQLException e) {
-			e.printStackTrace();
-		}
-
-		try {
 			AccountRecords.insert(details, bankDetails);
+			response.sendRedirect("MainPage.jsp");
 		} catch (ClassNotFoundException | SQLException e) {
 			e.printStackTrace();
 		}
 
+		
 
-		response.sendRedirect("MainPage.jsp");
+
+		
 
 	}
 }

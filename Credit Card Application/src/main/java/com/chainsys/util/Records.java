@@ -5,6 +5,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.List;
 
 import com.chainsys.model.Details;
 
@@ -15,7 +16,7 @@ public class Records {
 		Connection connect = ConnectUtil.getConnection();
 		String query = "INSERT INTO user_details(first_name,last_name,dob,aadhaar_number,aadhaar_proof,pan_number,pan_proof,email_id,phone_number,password) VALUES(?,?,?,?,?,?,?,?,?,?)";
 
-		PreparedStatement pr = connect.prepareStatement(query);
+		try(PreparedStatement pr = connect.prepareStatement(query);){
 
 		pr.setString(1, details.getfName());
 		pr.setString(2, details.getlName());
@@ -30,8 +31,8 @@ public class Records {
 
 		pr.executeUpdate();
 		
-		System.out.println("signing Up");
 
+	}
 	}
 	
 	
@@ -39,40 +40,39 @@ public static boolean check(Details details) throws ClassNotFoundException, SQLE
 		
 
 		Connection connect = ConnectUtil.getConnection();
-		String query = "SELECT * FROM user_details WHERE email_id=? AND password=? ";
+		String query = "SELECT email_id,password FROM user_details WHERE email_id=? AND password=? ";
 
-		PreparedStatement pr = connect.prepareStatement(query);
+		try(PreparedStatement pr = connect.prepareStatement(query);){
 
 		pr.setString(1, details.getMail());
 		pr.setString(2, details.getPassword());
 
 		ResultSet rs = pr.executeQuery();
 
-		if (rs.next()) {
+		while (rs.next()) {
 			
 			
 
-			System.out.println("Login successful!");
 			return true;
 
 			
 		}
-		System.out.println("Invalid account");
 		return false;
 	
 		
 
 	}
+}
 
 
-	public static ArrayList<Details> read(Details details) throws ClassNotFoundException, SQLException {
+	public static List<Details> read(Details details) throws ClassNotFoundException, SQLException {
 		
         ArrayList<Details> list = new ArrayList<>();
 
 		Connection connect = ConnectUtil.getConnection();
-		String query = "SELECT * FROM user_details WHERE email_id=? AND password=? ";
+		String query = "SELECT id,first_name,last_name,dob,aadhaar_number,pan_number,phone_number,email_id FROM user_details WHERE email_id=? AND password=? ";
 
-		PreparedStatement pr = connect.prepareStatement(query);
+		try(PreparedStatement pr = connect.prepareStatement(query);){
 
 		pr.setString(1, details.getMail());
 		pr.setString(2, details.getPassword());
@@ -90,7 +90,6 @@ public static boolean check(Details details) throws ClassNotFoundException, SQLE
 			details.setPhone(rs.getString("phone_number"));
 			details.setMail(rs.getString("email_id"));
 			
-			System.out.println("reading user details");
 			
 			list.add(details);
 
@@ -98,15 +97,15 @@ public static boolean check(Details details) throws ClassNotFoundException, SQLE
 		}
 		return list;
 		
-
+		}
 	}
 public static void readSpecific(Details details) throws ClassNotFoundException, SQLException {
 		
        
 		Connection connect = ConnectUtil.getConnection();
-		String query = "SELECT * FROM user_details WHERE email_id=? AND password=? ";
+		String query = "SELECT id,first_name,last_name,dob,aadhaar_number,pan_number,phone_number FROM user_details WHERE email_id=? AND password=? ";
 
-		PreparedStatement pr = connect.prepareStatement(query);
+		try(PreparedStatement pr = connect.prepareStatement(query);){
 
 		pr.setString(1, details.getMail());
 		pr.setString(2, details.getPassword());
@@ -128,7 +127,8 @@ public static void readSpecific(Details details) throws ClassNotFoundException, 
 		
 
 			
-		}		
+		}	
+		}
 			}
 
 public static String readMail(int id) throws ClassNotFoundException, SQLException {
@@ -137,7 +137,7 @@ public static String readMail(int id) throws ClassNotFoundException, SQLExceptio
 	Connection connect = ConnectUtil.getConnection();
 	String query = "SELECT email_id FROM user_details WHERE id=? ";
 
-	PreparedStatement pr = connect.prepareStatement(query);
+	try(PreparedStatement pr = connect.prepareStatement(query);){
 
 	pr.setInt(1, id);
 
@@ -152,5 +152,11 @@ public static String readMail(int id) throws ClassNotFoundException, SQLExceptio
 	return mail;
 
 		}
+}
+
+
+private Records() {
+	super();
+}
 
 }

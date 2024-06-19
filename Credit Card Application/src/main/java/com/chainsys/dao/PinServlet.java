@@ -20,20 +20,16 @@ import com.chainsys.util.CardRecords;
 public class PinServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	
-	CreditCardDetails card = new CreditCardDetails();
-	Details details=new Details();
+static	CreditCardDetails card = new CreditCardDetails();
+static	Details details=new Details();
     
     public PinServlet() {
         super();
     }
 
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-	}
-
 	
+
+	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		HttpSession s= request.getSession();
@@ -41,25 +37,23 @@ public class PinServlet extends HttpServlet {
 		for(Details list1: list) {
 		
 			
-			System.out.println("pinServlet:customer's ID"+list1.getCustomerID());
         details.setCustomerID(list1.getCustomerID());
 		card.setCardNumber(request.getParameter("cardNumber"));
-		int pin=Integer.parseInt(request.getParameter("pin"));
-		card.setPin(pin);
+		
 		
 		try {
-			System.out.println(CardRecords.check(card));
+			int pin=Integer.parseInt(request.getParameter("pin"));
+			card.setPin(pin);
 			if(CardRecords.check(card)==true) {
 				
 				CardRecords.update(card, details);
 				response.sendRedirect("CustomerDetails.jsp");
 			
 			}else {
-				System.out.println("Sorry your card is not APPROVED yet");
+				//Sorry your card is not APPROVED yet
 				response.sendRedirect("SetPin.jsp");
 			}
 		} catch (ClassNotFoundException | SQLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		

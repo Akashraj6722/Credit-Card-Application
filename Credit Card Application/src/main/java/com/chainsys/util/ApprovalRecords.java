@@ -12,26 +12,29 @@ public class ApprovalRecords {
 		Connection connect=ConnectUtil.getConnection(); 
 		String query="UPDATE credit_card_details SET credit_card_approval='Approved',credit_card_status='Active' WHERE customer_id=? ";
 		
-		PreparedStatement pr=connect.prepareStatement(query);
+		try(PreparedStatement pr=connect.prepareStatement(query);){
 		pr.setInt(1, card.getId());
 		
 		pr.executeUpdate();
-		System.out.println("approvalRecords Update");
 		
 		
 	}
-	
+	}
 	public static void reject(CreditCardDetails card) throws ClassNotFoundException, SQLException {
 		Connection connect=ConnectUtil.getConnection(); 
 		String query="UPDATE credit_card_details SET credit_card_approval='Rejected',credit_card_status='Not active' WHERE customer_id=? ";
 		
-		PreparedStatement pr=connect.prepareStatement(query);
+		try(PreparedStatement pr=connect.prepareStatement(query);){
 		pr.setInt(1, card.getId());
 		
 		pr.executeUpdate();
-		System.out.println("approvalRecords Reject");
 		
 		
+	}
+	}
+
+	private ApprovalRecords() {
+		super();
 	}
 	
 }

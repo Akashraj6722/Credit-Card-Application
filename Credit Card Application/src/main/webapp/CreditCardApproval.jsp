@@ -15,11 +15,11 @@
 </head>
 <body>
 	<div class="header">
-		<h1>
+		
 			<a href="AdminPage.jsp"><i class="fa-solid fa-arrow-left-long"
 				></i></a> <img alt="" src="images/logo-no-background.png"
 				style="width: 150px;">
-		</h1>
+		
 
 	</div>
 

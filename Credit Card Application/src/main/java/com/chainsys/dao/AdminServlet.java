@@ -4,7 +4,6 @@ import java.io.IOException;
 import java.sql.SQLException;
 
 import javax.mail.MessagingException;
-import javax.mail.internet.AddressException;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -22,6 +21,7 @@ import com.chainsys.util.Records;
 @WebServlet("/AdminServlet")
 public class AdminServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+	private static final String  CREDITCARDAPPROVAL= "CreditCardApproval.jsp";
 	static CreditCardDetails card = new CreditCardDetails();
 	static Details details=new Details();
 	static EmploymentDetails employment= new EmploymentDetails();
@@ -36,7 +36,7 @@ public class AdminServlet extends HttpServlet {
 
 		String action = request.getParameter("action");
 		try {
-			request.setAttribute("incomeProof", EmploymentRecords.read(details, employment));
+			request.setAttribute("incomeProof", EmploymentRecords.read());
 			request.setAttribute("values", CardRecords.read());
 		} catch (ClassNotFoundException | SQLException e) {
 			e.printStackTrace();
@@ -46,19 +46,18 @@ public class AdminServlet extends HttpServlet {
 		switch (action) {
 
 		case ("update"):
-			int id = Integer.parseInt(request.getParameter("id"));
-		String cardNumber=request.getParameter("card");
-			System.out.println(id);
-			card.setId(id);
+			
 			try {
+				int id = Integer.parseInt(request.getParameter("id"));
+				String cardNumber=request.getParameter("card");
+					card.setId(id);
 				String retrievedMail=Records.readMail(id);
-				System.out.println("Retreivedmail:"+retrievedMail);
 				
 				String message="Your Credit Card:"+cardNumber+"has been Approved";
 				
 				ApprovalRecords.approve(card);
 				
-				request.getRequestDispatcher("CreditCardApproval.jsp").forward(request, response);
+				request.getRequestDispatcher(CREDITCARDAPPROVAL).forward(request, response);
 				Mail.setProperties();
 				Mail.setMailBody(retrievedMail, message);
 				
@@ -71,30 +70,25 @@ public class AdminServlet extends HttpServlet {
 			
 		case("reject"):
 			
-			int customerId = Integer.parseInt(request.getParameter("id"));
-		System.out.println(customerId);
-		String cardNo=request.getParameter("card");
-
-		card.setId(customerId);
+			
 		try {
+			int customerId = Integer.parseInt(request.getParameter("id"));
+			String cardNo=request.getParameter("card");
+
+			card.setId(customerId);
 			String retrievedMail=Records.readMail(customerId);
-			System.out.println("Retreivedmail:"+retrievedMail);
 			
 			String message="Sorry!Your Credit Card:"+cardNo+"has been Rejected";
 			
 			ApprovalRecords.reject(card);
 			
-			request.getRequestDispatcher("CreditCardApproval.jsp").forward(request, response);
+			request.getRequestDispatcher(CREDITCARDAPPROVAL).forward(request, response);
 			Mail.setProperties();
 			Mail.setMailBody(retrievedMail, message);
 			
-		} catch (ClassNotFoundException | SQLException e) {
+		} catch (ClassNotFoundException | SQLException | MessagingException e) {
 			e.printStackTrace();
-		} catch (AddressException e) {
-			e.printStackTrace();
-		} catch (MessagingException e) {
-			e.printStackTrace();
-		}
+		} 
 
 		break;
 		default:
@@ -115,8 +109,8 @@ public class AdminServlet extends HttpServlet {
 
 		try {
 			request.setAttribute("values", CardRecords.read());
-			request.setAttribute("incomeProof", EmploymentRecords.read(details, employment));
-			request.getRequestDispatcher("CreditCardApproval.jsp").forward(request, response);
+			request.setAttribute("incomeProof", EmploymentRecords.read());
+			request.getRequestDispatcher(CREDITCARDAPPROVAL).forward(request, response);
 		} catch (ClassNotFoundException | SQLException e) {
 			e.printStackTrace();
 		}

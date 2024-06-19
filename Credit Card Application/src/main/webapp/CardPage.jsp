@@ -21,7 +21,7 @@
             </ul>
         </div>
         <div class="nav2">
-            <h1><img alt="" src="images/logo-no-background.png"  style="width: 150px;"></h1>
+            <img alt="" src="images/logo-no-background.png"  style="width: 150px;">
         </div>
         <div class="nav3">
             <ul>
@@ -38,10 +38,10 @@
                 <div class="card-silver">
                     <div class="card-inner-silver">
                         <div class="front-silver">
-                            <img src="" class="map-img">
+                           
                             <div class="row">
-                                <img src="https://i.ibb.co/G9pDnYJ/chip.png" width="50px">
-                                <img src="images/Rupay-Logo.png" width="80px">
+                                <img src="https://i.ibb.co/G9pDnYJ/chip.png" width="50px" alt="chip">
+                                <img src="images/Rupay-Logo.png" width="80px" alt="rupay">
                             </div>
                             <div class="row card-no-silver">
                                 <p>xxxx</p>
@@ -59,11 +59,10 @@
                             </div>
                         </div>
                         <div class="back-silver">
-                            <img src="" class="map-img">
                             <div class="bar"></div>
                             <div class="row card-cvv-silver">
                                 <div>
-                                    <img src="https://i.ibb.co/S6JG8px/pattern.png" width="200px">
+                                    <img src="https://i.ibb.co/S6JG8px/pattern.png" width="200px" alt="pattern">
                                 </div>
                                 <p>824</p>
 
@@ -74,7 +73,7 @@
                             </div>
                             <div class="row signature-silver">
                                 <p>CUSTOMER SIGNATURE</p>
-                                <img src="images/Rupay-Logo.png" width="50px">
+                                <img src="images/Rupay-Logo.png" width="50px" alt="rupay">
                             </div>
                         </div>
                     </div>
@@ -93,9 +92,8 @@
                         <li>Get free movie tickets worth Rs. 3,000 every year</li><br>
                         <li>Earn upto 20,000 Bonus Reward Points worth <br>
                             Rs. 2,500/year</li><br>
-                        <li></li>
                     </ul>
-                </div>
+                </div><br><br>
                 <div class="apply">
                     <a href="CardForms.jsp">Apply Now</a>
                 </div>
@@ -109,7 +107,6 @@
                 <div class="card-gold">
                     <div class="card-inner-gold">
                         <div class="front-gold">
-                            <img src="" class="map-img" alt="map">
                             <div class="row">
                                 <img src="https://i.ibb.co/G9pDnYJ/chip.png" width="50px" alt="chip">
                                 <img src="images/pulse.png" width="50px" alt="pulse">
@@ -130,11 +127,10 @@
                             </div>
                         </div>
                         <div class="back-gold">
-                            <img src="" class="map-img">
                             <div class="bar"></div>
                             <div class="row card-cvv-gold">
                                 <div>
-                                    <img src="https://i.ibb.co/S6JG8px/pattern.png" width="200px">
+                                    <img src="https://i.ibb.co/S6JG8px/pattern.png" width="200px" alt="pattern">
                                 </div>
                                 <p>824</p>
 
@@ -162,11 +158,10 @@
                     <ul>
                         <li>Welcome e-Gift Voucher worth Rs. 3,000 on joining</li><br>
                         <li>Get free movie tickets worth Rs. 4,000 every year</li><br>
-                        <li>Earn upto 50,000 Bonus Reward Points worth <br>
+                        <li>Earn upto 30,000 Bonus Reward Points worth <br>
                             Rs. 6,500/year</li><br>
-                        <li></li>
                     </ul>
-                </div>
+                </div><br><br>
                 <div class="apply">
                     <a href="CardForms.jsp">Apply Now</a>
                 </div>
@@ -185,7 +180,6 @@
                 <div class="card-platinum">
                     <div class="card-inner-platinum">
                         <div class="front-platinum">
-                            <img src="" class="map-img" alt="map">
                             <div class="row">
                                 <img src="https://i.ibb.co/G9pDnYJ/chip.png" width="50px" alt="chip">
                                 <img src="https://i.ibb.co/WHZ3nRJ/visa.png" width="60px" alt="visa">
@@ -206,11 +200,10 @@
                             </div>
                         </div>
                         <div class="back-platinum">
-                            <img src="" class="map-img">
                             <div class="bar"></div>
                             <div class="row card-cvv-platinum">
                                 <div>
-                                    <img src="https://i.ibb.co/S6JG8px/pattern.png" width="200px">
+                                    <img src="https://i.ibb.co/S6JG8px/pattern.png" width="200px" alt="pattern">
                                 </div>
                                 <p>824</p>
 
@@ -221,7 +214,7 @@
                             </div>
                             <div class="row signature-platinum">
                                 <p>CUSTOMER SIGNATURE</p>
-                                <img src="https://i.ibb.co/WHZ3nRJ/visa.png" width="50px">
+                                <img src="https://i.ibb.co/WHZ3nRJ/visa.png" width="50px" alt="visa">
                             </div>
                         </div>
                     </div>
@@ -237,11 +230,10 @@
                     <ul>
                         <li>Welcome e-Gift Voucher worth Rs. 4,000 on joining</li><br>
                         <li>Get free movie tickets worth Rs. 5,000 every year</li><br>
-                        <li>Earn upto 50,000 Bonus Reward Points worth <br>
+                        <li>Earn upto 40,000 Bonus Reward Points worth <br>
                             Rs. 10,500/year</li><br>
-                        <li>Complimentary membership to Club Vistara and <br> Trident Privil</li>
                     </ul>
-                </div>
+                </div><br><br>
                 <div class="apply">
                     <a href="CardForms.jsp">Apply Now</a>
                 </div>
@@ -274,11 +266,11 @@
                             </div>
                         </div>
                         <div class="back-elite">
-                            <img src="https://i.ibb.co/PYss3yv/map.png" class="map-img">
+                            <img src="https://i.ibb.co/PYss3yv/map.png" class="map-img" alt="map">
                             <div class="bar"></div>
                             <div class="row card-cvv-elite">
                                 <div>
-                                    <img src="https://i.ibb.co/S6JG8px/pattern.png" width="200px">
+                                    <img src="https://i.ibb.co/S6JG8px/pattern.png" width="200px" alt="pattern">
                                 </div>
                                 <p>824</p>
 
@@ -289,7 +281,7 @@
                             </div>
                             <div class="row signature-elite">
                                 <p>CUSTOMER SIGNATURE</p>
-                                <img src="images/Mastercard-Logo-2016-2020.png" width="50px">
+                                <img src="images/Mastercard-Logo-2016-2020.png" width="50px" alt="mastercard">
                             </div>
                         </div>
                     </div>

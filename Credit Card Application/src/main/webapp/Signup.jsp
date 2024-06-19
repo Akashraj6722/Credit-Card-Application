@@ -18,8 +18,7 @@
             </ul>
         </div>
         <div class="nav2">
-            <h1><img alt="" src="images/logo-no-background.png"  style="width: 150px;"></h1>
-            <!-- <img src="/ProjectImages/image.png" alt="" style="width: 40px;"> -->
+            <img alt="" src="images/logo-no-background.png"  style="width: 150px;">
         </div>
         <div class="nav3">
             <ul>
@@ -62,12 +61,6 @@
                     <li> <label for="ph" class="phone">Phone Number</label></li>
                     <li><input type="tel" id="ph" name="ph" placeholder="+91" pattern="[0-9]{10}" required></li><br>
 
-                    <!--<li><label for="accountType" class="accountType">Account Type</label></li><br>
-                            <li><select  name="accountType" id="accountType">
-                              <option value="Select"> Select Any One </option>
-                              <option value="Savings Account">Savings Account</option>
-                              <option value="Current Account">Current Account</option>
-                           </select></li><br> -->
                     <li> <label for="pass" class="pass">Password</label></li>
                     <li><input type="password" id="pass" name="pass" placeholder="Atleast 8 Characters"
                             pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*()_+.])(?=.*\\d).{8,}$" required></li><br>

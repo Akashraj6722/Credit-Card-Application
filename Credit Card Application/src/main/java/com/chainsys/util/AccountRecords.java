@@ -5,6 +5,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.List;
 
 import com.chainsys.model.BankDetails;
 import com.chainsys.model.Details;
@@ -17,29 +18,28 @@ public class AccountRecords {
 		Connection connect = ConnectUtil.getConnection();
 		String query = "INSERT INTO account_details(customer_id,account_number,ifsc_code)VALUES(?,?,?)";
 
-		PreparedStatement pr = connect.prepareStatement(query);
+		try(PreparedStatement pr = connect.prepareStatement(query);){
 		pr.setInt(1, details.getCustomerID());
 		pr.setString(2, bankDetails.getAccountNumber());
 		pr.setString(3, bankDetails.getIfsc());
 		
-		System.out.println("accountRecords-Insert"+details.getCustomerID());
 		
 
 		pr.executeUpdate();		
 	}
+	}
 	
-	public static ArrayList<BankDetails> read(Details details,BankDetails bankDetails) throws ClassNotFoundException, SQLException{
+	public static List<BankDetails> read(Details details,BankDetails bankDetails) throws ClassNotFoundException, SQLException{
 		
 		ArrayList<BankDetails> list= new ArrayList<>();
 		Connection connect = ConnectUtil.getConnection();
 		
 		String query="SELECT customer_id,account_type,account_number,ifsc_code,account_balance,account_status FROM account_details WHERE customer_id=?";
-		
-		PreparedStatement pr=connect.prepareStatement(query);
+		try
+		(PreparedStatement pr=connect.prepareStatement(query);){
 		
 		pr.setInt(1,details.getCustomerID());
 		
-		System.out.println("ID(account read): "+ details.getCustomerID());
 		
 		ResultSet rs=pr.executeQuery();
 		
@@ -56,9 +56,15 @@ public class AccountRecords {
 			list.add(bankDetails);
 			
 		}
+		}
 		return list;
 
 		
 	}
+
+	private AccountRecords() {
+		super();
+	}
+	
 
 }

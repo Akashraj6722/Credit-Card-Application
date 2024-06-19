@@ -33,10 +33,10 @@ import com.chainsys.util.Records;
 
 public class CardServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	Details details = new Details();
-	EmploymentDetails employment = new EmploymentDetails();
-	CreditCardDetails card = new CreditCardDetails();
-	BankDetails bankDetails = new BankDetails();
+	static	Details details = new Details();
+	static	EmploymentDetails employment = new EmploymentDetails();
+	static	CreditCardDetails card = new CreditCardDetails();
+	static	BankDetails bankDetails = new BankDetails();
 
 	/**
 	 * @see HttpServlet#HttpServlet()
@@ -45,11 +45,7 @@ public class CardServlet extends HttpServlet {
 		super();
 	}
 
-	@Override
-	protected void doGet(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
-
-	}
+	
 
 	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
@@ -87,119 +83,113 @@ public class CardServlet extends HttpServlet {
 
 			try {
 				Records.readSpecific(details);// to get customer id
-				System.out.println(details.getCustomerID());
+				
 				AccountRecords.read(details, bankDetails); // to get account number
 				EmploymentRecords.insert(employment, details);
 
-				System.out.println("employYY");
 			} catch (ClassNotFoundException | SQLException e) {
 				e.printStackTrace();
 			}
 
 			if (income >= 200000 && income < 400000) {
-				System.out.println("You are eligible for Silver Card");
+				//silver
 
 				card.setCardNumber(NumberGeneration.rupayCreditCardNumber());
 				card.setCvvNumber(NumberGeneration.ccvNumber());
 
 				YearMonth ym = YearMonth.now();
 				String date = ym.toString();
-				System.out.println(date);
 				card.setCardAppliedDate(date);
 
 				String valid = ym.plusYears(3).toString();
-				System.out.println(valid);
 				card.setValidity(valid);
 				card.setCardType("silver");
 
 				try {
 					CardRecords.insert(card, display, bankDetails);
+					request.setAttribute("values", PreviewDetails.display(card));
+					request.getRequestDispatcher("PreviewSilver.jsp").forward(request, response);
+
+
 				} catch (ClassNotFoundException | SQLException e) {
 					e.printStackTrace();
 				}
 
-				request.setAttribute("values", PreviewDetails.display(card));
-				request.getRequestDispatcher("PreviewSilver.jsp").forward(request, response);
-
-
+				
 			} else if (income >= 400000 && income < 600000) {
-				System.out.println("You are eligible for Gold Card");
+				//gold card
 				card.setCardNumber(NumberGeneration.pulseCreditCardNumber());
 				card.setCvvNumber(NumberGeneration.ccvNumber());
 
 				YearMonth ym = YearMonth.now();
 				String date = ym.toString();
-				System.out.println(date);
 				card.setCardAppliedDate(date);
 
 				String valid = ym.plusYears(3).toString();
-				System.out.println(valid);
 				card.setValidity(valid);
 				card.setCardType("gold");
 
 				try {
 					CardRecords.insert(card, display, bankDetails);
+					request.setAttribute("values", PreviewDetails.display(card));
+					request.getRequestDispatcher("PreviewGold.jsp").forward(request, response);
+
 				} catch (ClassNotFoundException | SQLException e) {
 					e.printStackTrace();
 				}
 
-				request.setAttribute("values", PreviewDetails.display(card));
-				request.getRequestDispatcher("PreviewGold.jsp").forward(request, response);
-
+				
 			} else if (income >= 600000 && income < 800000) {
+				//platinum card
 
-				System.out.println("You are eligible for Platinum Card");
 				card.setCardNumber(NumberGeneration.visaCreditCardNumber());
 				card.setCvvNumber(NumberGeneration.ccvNumber());
 
 				YearMonth ym = YearMonth.now();
 				String date = ym.toString();
-				System.out.println(date);
 				card.setCardAppliedDate(date);
 
 				String valid = ym.plusYears(4).toString();
-				System.out.println(valid);
 				card.setValidity(valid);
-				card.setCardType("silver");
+				card.setCardType("platinum");
 
 				try {
 					CardRecords.insert(card, display, bankDetails);
+					request.setAttribute("values", PreviewDetails.display(card));
+					request.getRequestDispatcher("PreviewPlatinum.jsp").forward(request, response);
+
+
 				} catch (ClassNotFoundException | SQLException e) {
 					e.printStackTrace();
 				}
 
-				request.setAttribute("values", PreviewDetails.display(card));
-				request.getRequestDispatcher("PreviewPlatinum.jsp").forward(request, response);
-
-
+				
 			} else if (income > 800000) {
-				System.out.println("You are eligible for Elite Card");
+				//elite
 				card.setCardNumber(NumberGeneration.masterCreditCardNumber());
 				card.setCvvNumber(NumberGeneration.ccvNumber());
 
 				YearMonth ym = YearMonth.now();
 				String date = ym.toString();
-				System.out.println(date);
 				card.setCardAppliedDate(date);
 
 				String valid = ym.plusYears(5).toString();
-				System.out.println(valid);
 				card.setValidity(valid);
-				card.setCardType("silver");
+				card.setCardType("elite");
 
 				try {
 					CardRecords.insert(card, display, bankDetails);
+					request.setAttribute("values", PreviewDetails.display(card));
+					request.getRequestDispatcher("PreviewElite.jsp").forward(request, response);
+
+
 				} catch (ClassNotFoundException | SQLException e) {
 					e.printStackTrace();
 				}
 
-				request.setAttribute("values", PreviewDetails.display(card));
-				request.getRequestDispatcher("PreviewElite.jsp").forward(request, response);
-
-
+				
 			} else {
-
-				System.out.println("Sorry! You're Income does'nt meet our minimum requirements");
+                //sorry U are not eligible
 
 			}
 

@@ -5,7 +5,6 @@ import javax.mail.Session;
 import javax.mail.Authenticator;
 import javax.mail.Message;
 import javax.mail.MessagingException;
-import javax.mail.internet.AddressException;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
 import javax.mail.PasswordAuthentication;
@@ -14,7 +13,6 @@ import javax.mail.Transport;
 public class Mail {
 
     static Session newSession = null;
-
 
     public static void setProperties() {
         Properties properties = System.getProperties();
@@ -31,20 +29,21 @@ public class Mail {
         });
     }
 
-    public static void setMailBody(String emailRecipient, String emailBody) throws AddressException, MessagingException {
-//        String emailRecipients =  "akashroman36@gmail.com" ;
+    public static void setMailBody(String emailRecipient, String emailBody) throws MessagingException {
         String emailSubject = "Credit Card Approval";
-//        String emailBody = "Your  card has been Approved";
 
         Message mimeMessage = new MimeMessage(newSession);
 
-//        for (String recipient : emailRecipients) {
             mimeMessage.addRecipient(Message.RecipientType.TO, new InternetAddress(emailRecipient));
-//        }
 
         mimeMessage.setSubject(emailSubject);
         mimeMessage.setText(emailBody);
 
         Transport.send(mimeMessage);
     }
+
+	private Mail() {
+		super();
+	}
+    
 }

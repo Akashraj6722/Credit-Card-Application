@@ -5,6 +5,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.List;
 
 import com.chainsys.model.BankDetails;
 import com.chainsys.model.CreditCardDetails;
@@ -19,7 +20,7 @@ public static void insert(CreditCardDetails card, Details details ,BankDetails b
 		Connection connect=ConnectUtil.getConnection();
 		
 		String query="INSERT INTO credit_card_details(customer_id,account_number,credit_card_number,credit_card_type,credit_card_cvv,credit_card_issue_date,credit_card_valid_till) VALUES(?,?,?,?,?,?,?)";
-		PreparedStatement pr =connect.prepareStatement(query);
+		try(PreparedStatement pr =connect.prepareStatement(query);){
 		
 		
 		pr.setInt(1,details.getCustomerID());
@@ -33,17 +34,16 @@ public static void insert(CreditCardDetails card, Details details ,BankDetails b
 		
 
 		pr.executeUpdate();
-		System.out.println("inserting card details");
 
 		
 	}
-
+}
 
   public static void update(CreditCardDetails card,Details details) throws ClassNotFoundException, SQLException {
 	  Connection connect=ConnectUtil.getConnection();
 		
 		String query="UPDATE credit_card_details SET credit_card_pin=? WHERE customer_id=? AND credit_card_number=?";
-		PreparedStatement pr =connect.prepareStatement(query);
+		try(PreparedStatement pr =connect.prepareStatement(query);){
 		
 		pr.setInt(1, card.getPin());
 		pr.setInt(2,details.getCustomerID());
@@ -51,20 +51,19 @@ public static void insert(CreditCardDetails card, Details details ,BankDetails b
 		
 		pr.executeUpdate();
 		
-		System.out.println("Setting...PIN customer's ID"+details.getCustomerID());
 
 	  
-	  
+		}
   }
   
-  public static ArrayList<CreditCardDetails> read() throws ClassNotFoundException, SQLException {
+  public static List<CreditCardDetails> read() throws ClassNotFoundException, SQLException {
 		
       ArrayList<CreditCardDetails> list = new ArrayList<>();
 
 		Connection connect = ConnectUtil.getConnection();
-		String query = "SELECT * FROM credit_card_details ";
+		String query = "SELECT customer_id,account_number,credit_card_number,credit_card_type,credit_card_cvv,credit_card_pin,credit_card_issue_date,credit_card_valid_till,credit_card_status,credit_card_approval FROM credit_card_details ";
 
-		PreparedStatement pr = connect.prepareStatement(query);
+		try(PreparedStatement pr = connect.prepareStatement(query);){
 
 		
 
@@ -88,23 +87,29 @@ public static void insert(CreditCardDetails card, Details details ,BankDetails b
 		
 
 	}
+  }
   
   public static boolean check(CreditCardDetails card) throws ClassNotFoundException, SQLException {
 	  
 	  Connection connect = ConnectUtil.getConnection();
 		String query = "SELECT credit_card_number FROM credit_card_details WHERE credit_card_number=? AND credit_card_approval='Approved' ";
 			
-		PreparedStatement pr = connect.prepareStatement(query);
+		try(PreparedStatement pr = connect.prepareStatement(query);){
 		pr.setString(1, card.getCardNumber());
 		ResultSet rs = pr.executeQuery();
 
 		if (rs.next()) {
 			
-			System.out.println("success");
 			return true;
-		}
+		}else {
 		return false;
-		
+		}
 	
   }
+  }
+
+private CardRecords() {
+	super();
+}
+  
 }

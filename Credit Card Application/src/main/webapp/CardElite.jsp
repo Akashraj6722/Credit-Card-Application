@@ -14,10 +14,10 @@
             <div class="card-elite">
                 <div class="card-inner-elite">
                     <div class="front-elite">
-                        <img src="https://i.ibb.co/PYss3yv/map.png" class="map-img">
+                        <img src="https://i.ibb.co/PYss3yv/map.png" class="map-img"alt="map">
                         <div class="row">
-                            <img src="https://i.ibb.co/G9pDnYJ/chip.png" width="50px">
-                            <img src="https://i.ibb.co/WHZ3nRJ/visa.png" width="50px">
+                            <img src="https://i.ibb.co/G9pDnYJ/chip.png" width="50px" alt="chip">
+                            <img src="https://i.ibb.co/WHZ3nRJ/visa.png" width="50px" alt="visa">
                         </div>
                         <div class="row card-no-elite">
                             <p>xxxx</p>
@@ -35,11 +35,11 @@
                         </div>
                     </div>
                     <div class="back-elite">
-                        <img src="https://i.ibb.co/PYss3yv/map.png" class="map-img">
+                        <img src="https://i.ibb.co/PYss3yv/map.png" class="map-img" alt="map">
                         <div class="bar"></div>
                         <div class="row card-cvv-elite">
                             <div>
-                                <img src="https://i.ibb.co/S6JG8px/pattern.png" width="200px">
+                                <img src="https://i.ibb.co/S6JG8px/pattern.png" width="200px" alt="pattern">
                             </div>
                             <p>824</p>
 
@@ -51,7 +51,7 @@
                         </div>
                         <div class="row signature-elite">
                             <p>CUSTOMER SIGNATURE</p>
-                            <img src="https://i.ibb.co/WHZ3nRJ/visa.png" width="50px">
+                            <img src="https://i.ibb.co/WHZ3nRJ/visa.png" width="50px" alt="visa">
                         </div>
                     </div>
                 </div>

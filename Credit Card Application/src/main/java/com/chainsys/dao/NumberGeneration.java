@@ -4,23 +4,11 @@ import java.util.Random;
 
 public class NumberGeneration {
 
-	public static void main(String[] args) {
+    static Random random=new Random();
 
-		
-		System.out.println("ACC.No: "+accountNumber());
-		System.out.println("IFSC code: "+ifsc());
-		
-		  System.out.println(visaCreditCardNumber());
-		  System.out.println(masterCreditCardNumber());
-
-
-
-
-	}
 
 	public static String accountNumber() {
 		
-		Random random =new Random();
 		
 		StringBuilder sb=new StringBuilder();
 		
@@ -29,14 +17,12 @@ public class NumberGeneration {
 			sb.append(random.nextInt(10));
 			
 		}
-		String accountNumber="212300"+sb.toString();
-		return accountNumber;
+		return "212300"+sb.toString();
 		
 	}
 	
 	public static String ifsc() {
 		
-		Random random=new Random();
 		
 		StringBuilder sb= new StringBuilder();
 		
@@ -51,19 +37,16 @@ public class NumberGeneration {
 			sb.append(random.nextInt(10));
 		}
 		
-		String ifsc=sb.toString();
-		return ifsc;
+		
+		return sb.toString();
 	}
 	
 	public static int ccvNumber() {
 		
 		
-        Random random = new Random();
 
-        int cvv = 100 + random.nextInt(100);
-
-        System.out.println("Generated CVV: " + cvv);
-		return cvv;
+        
+		return 100 + random.nextInt(100);
 		
 		
 		
@@ -71,7 +54,6 @@ public class NumberGeneration {
 	
 	public static String visaCreditCardNumber() {
 		
-        Random random=new Random();
         
         
 		
@@ -82,23 +64,16 @@ public class NumberGeneration {
 			sb.append(random.nextInt(10));
 			
 		}
-		String cardNumber="4"+sb.toString();
 		
-//		String [] cardArray=cardNumber.split("(?<=\\G.{4})");
-//		
-//		for(int i =0;i<4;i++) {
-//			
-//			System.out.println(cardArray[i]);
-//			
-//		}
-		return cardNumber;
+		
+
+		return "4"+sb.toString();
 		
 		
 	}
 
 	public static String masterCreditCardNumber() {
 		
-        Random random=new Random();
         
         
 		
@@ -109,14 +84,12 @@ public class NumberGeneration {
 			sb.append(random.nextInt(10));
 			
 		}
-		String cardNumber="5"+sb.toString();
 
-		return cardNumber;
+		return"5"+sb.toString();
 		
 	}
 public static String rupayCreditCardNumber() {
 		
-        Random random=new Random();
         
         
 		
@@ -127,15 +100,13 @@ public static String rupayCreditCardNumber() {
 			sb.append(random.nextInt(10));
 			
 		}
-		String cardNumber="6"+sb.toString();
 
-		return cardNumber;
+		return "6"+sb.toString();
 		
 	}
 
 public static String pulseCreditCardNumber() {
 	
-    Random random=new Random();
     
     
 	
@@ -146,10 +117,14 @@ public static String pulseCreditCardNumber() {
 		sb.append(random.nextInt(10));
 		
 	}
-	String cardNumber="3"+sb.toString();
-
-	return cardNumber;
 	
+
+	return "3"+sb.toString();
+	
+}
+
+private NumberGeneration() {
+	super();
 }
 	
 }

@@ -1,8 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
-<html>
+
 <html lang="en">
+<head>
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
 </head>
@@ -17,9 +18,9 @@
             </ul>
         </div>
         <div class="nav2">
-            <h1><img alt="" src="images/logo-no-background.png"  style="width: 150px;"></h1>
+            <img alt="" src="images/logo-no-background.png"  style="width: 150px;">
 
-            <!-- <img src="/ProjectImages/image.png" alt="" style="width: 40px;"> -->
+
         </div>
         <div class="nav3">
             <ul>

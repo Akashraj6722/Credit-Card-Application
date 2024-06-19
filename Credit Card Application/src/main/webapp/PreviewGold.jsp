@@ -46,7 +46,7 @@ for(CreditCardDetails list1:list){
             </ul>
         </div>
         <div class="nav2">
-            <h1><img alt="" src="images/logo-no-background.png"  style="width: 150px;"></h1>
+            <img alt="" src="images/logo-no-background.png"  style="width: 150px;">
         </div>
         <div class="nav3">
             <ul>
@@ -64,10 +64,10 @@ for(CreditCardDetails list1:list){
 	<div class="card-gold">
 		<div class="card-inner-gold">
 			<div class="front-gold">
-				<img src="" class="map-img">
+				<img src="" class="map-img" alt="map">
 				<div class="row">
-					<img src="https://i.ibb.co/G9pDnYJ/chip.png" width="50px"> <img
-						src="images/pulse.png" width="50px">
+					<img src="https://i.ibb.co/G9pDnYJ/chip.png" width="50px" alt="chip"> <img
+						src="images/pulse.png" width="50px" alt="pulse">
 				</div>
 				<div class="row card-no-gold">
 					<p><%= part1 %></p>
@@ -85,11 +85,11 @@ for(CreditCardDetails list1:list){
 				</div>
 			</div>
 			<div class="back-gold">
-				<img src="" class="map-img">
+				<img src="" class="map-img" alt="map">
 				<div class="bar"></div>
 				<div class="row card-cvv-gold">
 					<div>
-						<img src="https://i.ibb.co/S6JG8px/pattern.png" width="200px">
+						<img src="https://i.ibb.co/S6JG8px/pattern.png" width="200px" alt="pattern">
 					</div>
 					<p>824</p>
 
@@ -100,7 +100,7 @@ for(CreditCardDetails list1:list){
 				</div>
 				<div class="row signature-gold">
 					<p>CUSTOMER SIGNATURE</p>
-					<img src="images/pulse.png" width="50px">
+					<img src="images/pulse.png" width="50px" alt="pulse">
 				</div>
 			</div>
 		</div>
