@@ -33,7 +33,7 @@ public class AccountRecords {
 		ArrayList<BankDetails> list= new ArrayList<>();
 		Connection connect = ConnectUtil.getConnection();
 		
-		String query="SELECT * FROM account_details WHERE customer_id=?";
+		String query="SELECT customer_id,account_type,account_number,ifsc_code,account_balance,account_status FROM account_details WHERE customer_id=?";
 		
 		PreparedStatement pr=connect.prepareStatement(query);
 		

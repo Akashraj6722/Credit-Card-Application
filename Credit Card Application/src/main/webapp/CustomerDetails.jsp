@@ -5,9 +5,11 @@
 <%@ page import="com.chainsys.model.Details"%>
 
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="ISO-8859-1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
 <title>Insert title here</title>
 </head>
 <body>
@@ -25,29 +27,30 @@
 	%>
 	<div class="header">
 		<h1>
+		
 			<img alt="" src="images/logo-no-background.png" style="width: 150px;">
 		</h1>
 
 	</div>
 	<div class="sidebar">
 
-		<a href="#home">Home</a>
+		<a href="#home"><i class="fa-solid fa-house"></i>Home</a>
 
 		<form action="LoginServlet" method="get">
-			<button class="btn btn secondary" value="submit">Account
+			<button class="btn btn secondary" value="submit"><i class="fa-solid fa-file-invoice"></i>Account
 				Details</button>
 			<!-- <a href="">Account Details</a> -->
 		</form>
 
-		<a href="CardPage.jsp">Apply Credit Card</a>
+		<a href="CardPage.jsp"><i class="fa-regular fa-credit-card"></i>Apply Credit Card</a>
 		
-		 <a href="SetPin.jsp">Set
+		 <a href="SetPin.jsp"><i class="fa-solid fa-key"></i>Set
 			PIN For Credit Card</a> 
 			
-		<a href="#contact">Contact</a>
+		<a href="#contact"><i class="fa-solid fa-tty"></i>Contact</a>
 
 		<form action="LogoutServlet" method="post">
-			<button type="submit" value="submit">Logout</button>
+			<button type="submit" value="submit"><i class="fa-solid fa-right-from-bracket"></i>Logout</button>
 
 		</form>
 
@@ -98,6 +101,10 @@
 
 </body>
 <style>
+
+i{
+padding-right:10px;
+}
 body, html {
 	margin: 0;
 	padding: 0;
@@ -109,26 +116,21 @@ body, html {
 	background-color: rgb(20, 136, 236);
 	color: #fff;
 	height: 75px;
-	/*         padding: 5px;
- */
 	text-align: center;
-	/*         font-size: 24px;
- */
 	position: fixed;
 	width: 100%;
-	/*         top: 0;
- */
 	z-index: 1000;
 }
 
 .header h1 {
 	margin-top: 6px;
+	margin-left:50px;
 }
 
 button {
 	height: 60px;
 	/* margin-left:12px; */
-	font-size: 18px;
+	font-size: 17px;
 	background-color: rgb(138, 150, 174);
 	color: white;
 	border: 0;
@@ -157,7 +159,7 @@ button:hover {
 .sidebar a {
 	padding: 15px 20px;
 	text-decoration: none;
-	font-size: 18px;
+	font-size: 17px;
 	color: white;
 	display: block;
 }
@@ -191,17 +193,6 @@ button:hover {
 	font-size: 16px;
 }
 
-.button {
-	background-color: #333;
-	color: white;
-	padding: 10px 20px;
-	border: none;
-	border-radius: 5px;
-	cursor: pointer;
-	font-size: 16px;
-	text-align: center;
-	text-decoration: none;
-}
 
 .button:hover {
 	background-color: #005f73;

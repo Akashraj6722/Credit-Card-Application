@@ -146,7 +146,7 @@ public static String pulseCreditCardNumber() {
 		sb.append(random.nextInt(10));
 		
 	}
-	String cardNumber="6"+sb.toString();
+	String cardNumber="3"+sb.toString();
 
 	return cardNumber;
 	

@@ -30,9 +30,7 @@ public class LoginServlet extends HttpServlet {
         super();
     }
 
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
+    @Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		System.out.println("get");
 //		 System.out.println(details.getCustomerID());
@@ -51,7 +49,7 @@ public class LoginServlet extends HttpServlet {
 	}
 
 	
-		
+	@Override	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
   

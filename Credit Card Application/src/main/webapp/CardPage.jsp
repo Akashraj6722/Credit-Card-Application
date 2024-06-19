@@ -1,9 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
 <meta charset="ISO-8859-1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
 <title>Insert title here</title>
 </head>
 <body>
@@ -11,7 +14,8 @@
 
         <div class="nav1">
             <ul>
-                <li><a href="MainPage.jsp">Home</a></li>
+                <li> <a class="back"href="CustomerDetails.jsp"><i class="fa-solid fa-arrow-left-long"
+				></i></a></li>
 
 
             </ul>
@@ -105,10 +109,10 @@
                 <div class="card-gold">
                     <div class="card-inner-gold">
                         <div class="front-gold">
-                            <img src="" class="map-img">
+                            <img src="" class="map-img" alt="map">
                             <div class="row">
-                                <img src="https://i.ibb.co/G9pDnYJ/chip.png" width="50px">
-                                <img src="images/pulse.png" width="50px">
+                                <img src="https://i.ibb.co/G9pDnYJ/chip.png" width="50px" alt="chip">
+                                <img src="images/pulse.png" width="50px" alt="pulse">
                             </div>
                             <div class="row card-no-gold">
                                 <p>xxxx</p>
@@ -141,7 +145,7 @@
                             </div>
                             <div class="row signature-gold">
                                 <p>CUSTOMER SIGNATURE</p>
-                                <img src="images/pulse.png" width="50px">
+                                <img src="images/pulse.png" width="50px" alt="pulse">
                             </div>
                         </div>
                     </div>
@@ -181,10 +185,10 @@
                 <div class="card-platinum">
                     <div class="card-inner-platinum">
                         <div class="front-platinum">
-                            <img src="" class="map-img">
+                            <img src="" class="map-img" alt="map">
                             <div class="row">
-                                <img src="https://i.ibb.co/G9pDnYJ/chip.png" width="50px">
-                                <img src="https://i.ibb.co/WHZ3nRJ/visa.png" width="60px">
+                                <img src="https://i.ibb.co/G9pDnYJ/chip.png" width="50px" alt="chip">
+                                <img src="https://i.ibb.co/WHZ3nRJ/visa.png" width="60px" alt="visa">
                             </div>
                             <div class="row card-no-platinum">
                                 <p>xxxx</p>
@@ -249,10 +253,10 @@
                 <div class="card-elite">
                     <div class="card-inner-elite">
                         <div class="front-elite">
-                            <img src="https://i.ibb.co/PYss3yv/map.png" class="map-img">
+                            <img src="https://i.ibb.co/PYss3yv/map.png" class="map-img" alt="map">
                             <div class="row">
-                                <img src="https://i.ibb.co/G9pDnYJ/chip.png" width="50px">
-                                <img src="images/Mastercard-Logo-2016-2020.png" width="80px">
+                                <img src="https://i.ibb.co/G9pDnYJ/chip.png" width="50px" alt ="chip">
+                                <img src="images/Mastercard-Logo-2016-2020.png" width="80px" alt="mastercard">
                             </div>
                             <div class="row card-no-elite">
                                 <p>xxxx</p>
@@ -314,6 +318,16 @@
 
 </body>
 <style>
+.back{
+	float: left;
+	margin-top: 22px;
+	margin-left: 10px;
+	color: white;
+}
+
+.back:hover {
+	color:black;
+}
  .nav {
         display: flex;
         justify-content: space-between;

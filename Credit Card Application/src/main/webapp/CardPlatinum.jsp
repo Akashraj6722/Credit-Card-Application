@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
@@ -13,10 +13,10 @@
             <div class="card-platinum">
                 <div class="card-inner-platinum">
                     <div class="front-platinum">
-                        <img src="" class="map-img">
+                        <img src="" class="map-img" alt="map">
                         <div class="row">
-                            <img src="https://i.ibb.co/G9pDnYJ/chip.png" width="50px">
-                            <img src="https://i.ibb.co/WHZ3nRJ/visa.png" width="50px">
+                            <img src="https://i.ibb.co/G9pDnYJ/chip.png" width="50px" alt="chip">
+                            <img src="https://i.ibb.co/WHZ3nRJ/visa.png" width="50px" alt="visa">
                         </div>
                         <div class="row card-no-platinum">
                             <p>xxxx</p>
@@ -34,11 +34,11 @@
                         </div>
                     </div>
                     <div class="back-platinum">
-                        <img src="" class="map-img">
+                        <img src="" class="map-img" alt="map">
                         <div class="bar"></div>
                         <div class="row card-cvv-platinum">
                             <div>
-                                <img src="https://i.ibb.co/S6JG8px/pattern.png" width="200px">
+                                <img src="https://i.ibb.co/S6JG8px/pattern.png" width="200px" alt="pattern">
                             </div>
                             <p>824</p>
 
@@ -50,7 +50,7 @@
                         </div>
                         <div class="row signature-platinum">
                             <p>CUSTOMER SIGNATURE</p>
-                            <img src="https://i.ibb.co/WHZ3nRJ/visa.png" width="50px">
+                            <img src="https://i.ibb.co/WHZ3nRJ/visa.png" width="50px" alt="visa">
                         </div>
                     </div>
                 </div>

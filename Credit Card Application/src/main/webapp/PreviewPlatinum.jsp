@@ -4,7 +4,7 @@
     <%@ page import="com.chainsys.model.CreditCardDetails" %>
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
 <head>
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>

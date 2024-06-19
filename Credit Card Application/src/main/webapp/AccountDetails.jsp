@@ -5,9 +5,12 @@
 <%@ page import="com.chainsys.model.BankDetails"%>
 
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
 <meta charset="ISO-8859-1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
 <title>Insert title here</title>
 </head>
 <body>
@@ -24,24 +27,27 @@
 	BankDetails bankDetails = new BankDetails();
 	%>
 	<div class="header">
-		<h1>
+     
+      <a class="back"href="CustomerDetails.jsp"><i class="fa-solid fa-arrow-left-long"
+				></i></a>
 			<img alt="" src="images/logo-no-background.png" style="width: 150px;">
-		</h1>
+	
 
 	</div>
 	<div class="sidebar">
 
-		<a href="#home">Home</a>
+		<a href="#home"><i class="fa-solid fa-house"></i>Home</a>
 		<form action="CustomerDetails.jsp">
-			<button class="btn btn secondary" value="submit">Profile</button>
-			<!-- <a href="">Account Details</a> -->
+			<button class="btn btn secondary" value="submit"><i class="fa-regular fa-user"></i>Profile</button>
+
 		</form>
-		<a href="CardPage.jsp">Apply Credit Card</a>
-		 <a href="SetPin.jsp">Set
-			PIN For Credit Card</a>
-		 <a href="#contact">Contact</a>
+		<a href="CardPage.jsp"><i class="fa-regular fa-credit-card"></i>Apply Credit Card</a>
+		<a href="SetPin.jsp"><i class="fa-solid fa-key"></i>Set
+			PIN For Credit Card</a> 
+		 <a href="#contact"><i class="fa-solid fa-tty"></i>Contact</a>
+
 		<form action="LogoutServlet" method="post">
-			<button class="btn btn secondary" value="submit">Logout</button>
+			<button type="submit" value="submit"><i class="fa-solid fa-right-from-bracket"></i>Logout</button>
 
 		</form>
 
@@ -80,9 +86,22 @@
 
 </body>
 <style>
+.back{
+	float: left;
+	margin-top: 22px;
+	margin-left: 10px;
+	color: white;
+}
+
+.back:hover {
+	color:black;
+}
+i{
+padding-right:10px;
+}
 button {
 	height: 60px;
-	font-size: 18px;
+	font-size: 17px;
 	background-color: rgb(138, 150, 174);
 	color: white;
 	border: 0;
@@ -138,7 +157,7 @@ body, html {
 .sidebar a {
 	padding: 15px 20px;
 	text-decoration: none;
-	font-size: 18px;
+	font-size: 17px;
 	color: white;
 	display: block;
 }

@@ -3,14 +3,19 @@
 
 
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
 </head>
 
 <body>
-	<div class="header">Money</div>
+	<div class="header">
+	
+			<img alt="" src="images/logo-no-background.png" style="width: 150px;">
+		
+
+	</div>
 	<div class="sidebar">
 
 		<a href="AdminPage.jsp">Home</a> <a href="#contact">Contact</a> <a
@@ -22,29 +27,30 @@
 	<div class="main-content">
 		<div class="card">
 			<form action="AdminServlet" method="post">
-				<button class="btn btn secondary" value="submit">To Approve/reject Customer's Credit Card
-					</button>
-				<!-- <a href="">Account Details</a> -->
+				<button class="btn btn secondary" value="submit">To
+					Approve/reject Customer's Credit Card</button>
 			</form>
 		</div>
-
-		<!--  <div class="card">
-            <div class="card-header">Customer Id</div>
-        </div>
-         <div class="card">
-            <div class="card-header">Aadhaar Number</div>
-        </div>
-        <div class="card">
-            <div class="card-header">Pan Number</div>
-        </div>
-        <div class="card">
-            <div class="card-header">Phone Number</div>
-        </div> -->
 
 	</div>
 </html>
 </body>
 <style>
+.header {
+	background-color: rgb(20, 136, 236);
+	color: #fff;
+	height: 75px;
+	text-align: center;
+	position: fixed;
+	width: 100%;
+	top: 0;
+	z-index: 1000;
+}
+
+.header  {
+	margin-top: 6px;
+}
+
 body, html {
 	margin: 0;
 	padding: 0;
@@ -52,17 +58,7 @@ body, html {
 	background-color: #f4f4f4;
 }
 
-.header {
-	background-color: rgb(20, 136, 236);
-	color: #fff;
-	padding: 15px;
-	text-align: center;
-	font-size: 24px;
-	position: fixed;
-	width: 100%;
-	top: 0;
-	z-index: 1000;
-}
+
 
 .sidebar {
 	height: 100%;
@@ -71,7 +67,7 @@ body, html {
 	top: 60px;
 	left: 0;
 	background-color: rgb(138, 150, 174);
-	padding-top: 20px;
+	padding-top: 60px;
 	overflow-x: hidden;
 }
 
@@ -90,7 +86,7 @@ body, html {
 .main-content {
 	margin-left: 260px;
 	padding: 20px;
-	padding-top: 80px;
+	padding-top: 100px;
 	background-color: #f4f4f4;
 	min-height: 100vh;
 }
